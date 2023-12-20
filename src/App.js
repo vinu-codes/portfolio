@@ -1,11 +1,11 @@
 import React from 'react'
-import { Icon } from '@common/Icon'
+import LandingPage from '@pages/Landing'
 
 const App = () => {
   return (
     <div className="App">
       down for maintenance
-      <Icon name="ARROW" />
+      <LandingPage />
     </div>
   )
 }
