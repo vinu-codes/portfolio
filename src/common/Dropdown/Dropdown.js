@@ -1,24 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { Wrapper, Group, List, IconContainer, Header } from './Dropdown.styled'
 import { Icon } from '@common/Icon'
-
-const updatedArray = (selected, options) => {
-  if (!options || !options.length) return []
-  const result = options.map((option) => {
-    if (selected.label === option.label) {
-      return { ...option, ['active']: !option.active }
-    } else return option
-  })
-  return result
-}
-
-const totalSelected = (options) => {
-  if (!options || !options.length) return 0
-  const result = options.filter((option) => {
-    return option.active
-  })
-  return result.length
-}
+import { updatedArray, totalSelected } from './utils'
 
 const keyCodes = {
   ENTER: 'Enter',
