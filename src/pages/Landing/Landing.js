@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Hero } from '@components/Hero'
+
 import { TechRender } from '@components/TechCard'
 import { Button } from '@common/Button'
 import { Dropdown } from '@common/Dropdown/Dropdown'
@@ -8,7 +8,11 @@ import { Accordion } from '@common/Accordion'
 import { Provider as AccordionContainer } from '@common/Accordion'
 import { Layout } from '@components/Layout'
 import { Main } from '@common/Main'
-import { About } from '@pages/About'
+
+import { Intro } from './shared/Intro'
+import { About } from './shared/About'
+
+import { Icon, IconContainer } from '@common/Icon'
 
 const LandingPage = () => {
   const [state, setState] = useState({
@@ -27,21 +31,10 @@ const LandingPage = () => {
   }
 
   return (
-    <Layout
-      hero={
-        <Hero>
-          <Main
-            id="home"
-            subtitle="Front End Developer"
-            title="Hi my name is Vinu, welcome to my portfolio!"
-            config={{ hasTypeWriter: true }}
-          ></Main>
-        </Hero>
-      }
-    >
+    <Layout hero={<Intro />}>
       <About />
       <TechRender />
-      <Button>button</Button>
+
       <Dropdown
         options={state.dropdown}
         name="dropdown"

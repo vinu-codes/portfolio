@@ -1,18 +1,7 @@
 import styled, { css } from 'styled-components'
 import { colGutterSize } from './gridUtils'
 import { Col } from './Col'
-
-const mtFn = ({ mt }) =>
-  mt &&
-  css`
-    margin-top: ${mt}px;
-  `
-
-const mbFn = ({ mb }) =>
-  mb &&
-  css`
-    margin-bottom: ${mb}px;
-  `
+import { mtFn, mbFn } from '@common/Theme'
 
 const Row = styled.div.attrs({ className: 'Row' })`
   display: flex;

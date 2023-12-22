@@ -1,8 +1,21 @@
 import styled, { css } from 'styled-components'
+import { mbFn, mrFn, mlFn, mtFn } from '@common/Theme'
 
-const obj = { className: 'ICON' }
+const attributes = { className: 'ICON' }
 
-const Svg = styled.svg.attrs(obj)`
+const IconContainer = styled.div`
+  ${mlFn};
+  ${mtFn};
+  ${mbFn};
+  ${mrFn};
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const Svg = styled.svg.attrs(attributes)`
   transition: all 0.2s ease-in-out;
   ${(props) =>
     props.rotate &&
@@ -87,4 +100,4 @@ const Title = styled.h1`
   width: 100%;
 `
 
-export { Svg, Container, ItemContainer, Title, Group, Item }
+export { Svg, Container, ItemContainer, Title, Group, Item, IconContainer }

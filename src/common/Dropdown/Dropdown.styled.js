@@ -1,16 +1,5 @@
 import styled, { css } from 'styled-components'
-
-const mtFn = ({ mt }) =>
-  (mt || mt === 0) &&
-  css`
-    margin-top: ${mt}px;
-  `
-
-const mrFn = ({ mr }) =>
-  (mr || mr === 0) &&
-  css`
-    margin-right: ${mr}px;
-  `
+import { mtFn, mrFn } from '@common/Theme'
 
 const Wrapper = styled.div`
   position: relative;

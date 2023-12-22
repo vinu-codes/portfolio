@@ -1,6 +1,5 @@
 import React from 'react'
 import { Content } from '@common/Content'
-import { Grid, Row, Col } from '@common/Grid'
 import { Main } from '@common/Main'
 
 const aboutMeInfo = ` I am a frontend developer with an accounting background and a strong passion

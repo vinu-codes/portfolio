@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { media } from '@utils/media'
+import { media } from '@common/Theme'
 
 const ContentContainer = styled.div`
   top: 72px;

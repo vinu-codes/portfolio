@@ -1,17 +1,6 @@
 import styled, { css } from 'styled-components'
-import { media } from '@utils'
+import { media, colors } from '@common/Theme'
 
-const mtFn = ({ mt }) =>
-  (mt || mt === 0) &&
-  css`
-    margin-top: ${mt}px;
-  `
-
-const mrFn = ({ mr }) =>
-  (mr || mr === 0) &&
-  css`
-    margin-right: ${mr}px;
-  `
 const Container = styled.div`
   width: 100%;
   height: 72px;
@@ -21,6 +10,8 @@ const Container = styled.div`
   flex-direction: row;
   padding-top: 4px;
   padding-bottom: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
   background: white;
   position: fixed;
@@ -28,7 +19,10 @@ const Container = styled.div`
   top: 0;
   left: 0;
   transition: all 0.1s ease-in-out;
-
+  ${media.md`
+    padding-left: 24px;
+    padding-right: 24px;
+`};
   &.active {
     height: 100vh;
     min-height: 100vh;
@@ -156,6 +150,7 @@ const Image = styled.div`
   width: 64px;
   display: none;
   cursor: pointer;
+  border: 2px solid ${colors.navyBlue};
   img {
     width: 100%;
     height: 100%;

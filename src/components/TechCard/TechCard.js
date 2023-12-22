@@ -33,10 +33,6 @@ const Card = styled.div`
   background: white;
   transition: all 0.2s ease-in-out;
   box-shadow: 1px 2px 20px 0px rgba(0, 0, 0, 0.14);
-  &:hover {
-    box-shadow: 1px 2px 20px 0px rgba(0, 0, 0, 0.14);
-    transform: scale(1.07);
-  }
   border-radius: 12px;
   display: flex;
   flex-direction: column;
