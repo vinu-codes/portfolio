@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Grid, Row, Col } from '@common/Grid'
 import { FooterInfo } from './FooterInfo'
-import myPDF from './resume.pdf'
+// import myPDF from './resume.pdf'
 
 const FooterContainer = styled.div`
   flex-shrink: 0;
@@ -46,7 +46,7 @@ const Footer = () => {
                   label: 'Resume',
                   icon: 'RESUME',
                   type: 'download',
-                  value: myPDF,
+                  // value: myPDF,
                   download: 'resume',
                 },
               ]}

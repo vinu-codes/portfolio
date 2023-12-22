@@ -1,6 +1,16 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { Link } from '@components/Route'
+import resume from './resume.pdf'
+
+const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+  width: 24px;
+  height: 24px;
+`
 
 const DarkStyle = css`
   box-shadow: 11px 0px 12px 6px rgba(0, 0, 0, 0.3);
@@ -18,6 +28,33 @@ const DarkStyle = css`
   background-size: 16px 16px;
   background-position: 0 0;
   background-color: #313539;
+`
+
+const DownloadLink = styled.a`
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  span {
+    color: white;
+    font-weight: 100;
+    display: block;
+    line-height: 24px;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  &:hover {
+    span {
+      color: #6a6cff;
+    }
+  }
+  &:active {
+    span {
+      color: #6a6cff;
+    }
+  }
 `
 
 const FooterContainer = styled.div`
@@ -41,7 +78,7 @@ const FooterContainer = styled.div`
       font-weight: 300;
       padding-top: 8px;
       color: white;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 24px;
       padding-bottom: 8px;
     }
@@ -53,6 +90,8 @@ const FooterContainer = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 16px;
     border-bottom: 1px solid white;
   }
   li {
@@ -60,7 +99,6 @@ const FooterContainer = styled.div`
     padding: 0;
     list-style: none;
     padding: 8px;
-    margin-left: 8px;
     &:first-child {
       margin-left: 0;
     }
@@ -70,7 +108,7 @@ const FooterContainer = styled.div`
       text-decoration: none;
       line-height: 24px;
       font-weight: 300;
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 `
@@ -87,6 +125,17 @@ const Footer = () => (
         </li>
         <li>
           <Link to="/library">Library</Link>
+        </li>
+        <li>
+          <Link to="https://github.com/vinu-codes">Github</Link>
+        </li>
+        <li>
+          <Link to="https://www.linkedin.com/in/vinujk/">LinkedIn</Link>
+        </li>
+        <li>
+          <DownloadLink className="link" href={resume} download="resume">
+            <span className="info">Resume</span>
+          </DownloadLink>
         </li>
       </ul>
     </div>
