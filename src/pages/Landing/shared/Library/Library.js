@@ -44,9 +44,9 @@ const Library = () => {
           <p>this is inside accordionv2</p>
         </Accordion>
       </AccordionContainer>
-      <Modal active={true} title="Modal">
+      {/* <Modal active={true} title="Modal">
         children
-      </Modal>
+      </Modal> */}
     </Section>
   )
 }

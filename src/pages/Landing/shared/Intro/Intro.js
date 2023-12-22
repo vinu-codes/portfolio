@@ -9,7 +9,6 @@ const Intro = () => (
     <Main
       id="home"
       className="intro"
-      pt={72}
       subtitle="Front End Developer"
       title="Hi my name is Vinu, welcome to my portfolio!"
       config={{ hasTypeWriter: true }}

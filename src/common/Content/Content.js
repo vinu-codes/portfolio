@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { media } from '@common/Theme'
 
 const ContentContainer = styled.div`
-  top: 72px;
   position: relative;
   flex: 1 0 auto;
   background: white;
