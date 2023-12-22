@@ -6,7 +6,6 @@ const isActiveFn = (props) => {
   if (props.isActive) {
     return css`
       font-weight: 700;
-      border-left: 3px solid black;
     `
   }
 }
