@@ -25,7 +25,11 @@ const ButtonComponent = styled.button`
     span {
       color: #6a6cff;
     }
-
+    .CHEVRON {
+      path {
+        fill: #6a6cff;
+      }
+    }
     .ARROW {
       path {
         stroke: #6a6cff;
@@ -34,8 +38,10 @@ const ButtonComponent = styled.button`
   }
 `
 
-const Button = ({ onClick, children }) => {
-  return <ButtonComponent onClick={onClick}>{children}</ButtonComponent>
-}
+const Button = ({ onClick, className, children }) => (
+  <ButtonComponent className={className} onClick={onClick}>
+    {children}
+  </ButtonComponent>
+)
 
 export { Button }
