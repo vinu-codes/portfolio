@@ -109,6 +109,7 @@ const Footer = () => (
     <div className="row">
       <ul>
         <li>
+          <a>GitHub</a>
           <Link to="https://github.com/vinu-codes">Github</Link>
         </li>
         <li>

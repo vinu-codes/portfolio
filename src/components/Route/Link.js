@@ -33,14 +33,11 @@ const Link = ({ to, children }) => {
 
   const handleClick = (event) => {
     console.log(event)
-    // On Mac machines the META key is the Cmd (⌘) key.
     if (event.metaKey || event.ctrlKey) {
       return
     }
-
     event.preventDefault()
     navigate(to)
-    // updates address bar with path received from 'to'
   }
 
   return (
