@@ -1,7 +1,8 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Context } from '@components/Route'
 import { Icon } from '@common/Icon'
+import { useSize } from '@hooks/useSize'
 import {
   Container,
   Image,
@@ -16,6 +17,15 @@ import profile from './assets/profile.png'
 const NavBar = ({ title }) => {
   const { currentPath } = useContext(Context)
   const [isActive, setIsActive] = useState(false)
+  const { width } = useSize()
+
+  useEffect(() => {
+    if (!!width && width >= 768) {
+      setIsActive(false)
+      const body = document.querySelector('body')
+      body.style.overflow = 'auto'
+    }
+  }, [width])
 
   const toggleMenu = () => {
     setIsActive(!isActive)
