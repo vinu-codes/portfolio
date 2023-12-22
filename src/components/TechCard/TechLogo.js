@@ -1,4 +1,6 @@
 import React from 'react'
+import styled from 'styled-components'
+
 import {
   HTML_GRAPHIC,
   JS_GRAPHIC,
@@ -17,9 +19,11 @@ const matchingLogo = {
   GIT_GRAPHIC,
 }
 
-const TechLogo = ({ name }) => {
+const Container = styled.div``
+
+const TechLogo = ({ name, ...props }) => {
   const MatchingGraphic = matchingLogo[name] || null
-  return <MatchingGraphic />
+  return <MatchingGraphic {...props} />
 }
 
 export { TechLogo }

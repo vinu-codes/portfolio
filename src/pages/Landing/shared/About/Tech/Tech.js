@@ -4,6 +4,7 @@ import { Icon } from '@common/Icon'
 import { colors } from '@common/Theme'
 import { TechLogo } from '@components/TechCard/TechLogo'
 import { media } from '@common/Theme'
+import { Button } from '@common/Button'
 
 const animate = () => keyframes`
 0% {
@@ -20,6 +21,17 @@ const animateCancel = () => keyframes`
 100% {
   transform: translateX(calc(-50% + 0px));
 }`
+
+const animateChevron = () => {
+  return keyframes`
+    0% {
+      transform: scale(1.1)
+    }
+    100% {
+      transform: scale(1)
+    }
+  `
+}
 
 const Blade = styled.div`
   height: 100%;
@@ -59,6 +71,7 @@ const TechContainer = styled.div`
   height: 100%;
   transition: all 0.3s ease-in-out;
   display: none;
+  box-shadow: -3px 0px 9px 0px rgba(0, 0, 0, 0.16);
   background: white;
   ${media.md`
     display: block;
@@ -83,8 +96,8 @@ const Header = styled.div`
 
 const CloseButton = styled.button`
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 16px;
+  top: 16px;
   width: 48px;
   height: 48px;
   background: transparent;
@@ -105,7 +118,9 @@ const TechGroup = styled.ul`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow: hidden;
+  button.tech-button {
+    animation: ${animateChevron} 0.5s ease-in-out infinite alternate;
+  }
 `
 
 const TechItem = styled.li`
@@ -122,6 +137,8 @@ const TechItem = styled.li`
   align-items: center;
   border-radius: 8px;
   margin-bottom: 16px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
   span {
     font-size: 16px;
     color: ${colors.lightGrey};
@@ -141,6 +158,11 @@ const TechItem = styled.li`
     width: 100%;
     height: 100%;
   }
+  ${(props) =>
+    props.isActive &&
+    css`
+      z-index: 99;
+    `};
   ${(props) =>
     props.color &&
     css`
@@ -177,9 +199,11 @@ const Tech = () => {
     if (!items || !items.length) return null
     const result = items.map((item, index) => (
       <TechItem
+        style={{
+          transform: `translateY(${-100 * imageIndex}%)`,
+        }}
         color={item.color}
         key={index}
-        style={{ transform: `translateY(${-100 * imageIndex}%` }}
       >
         <TechLogo name={item.name} />
         <span>{item.label}</span>
@@ -188,7 +212,9 @@ const Tech = () => {
     return (
       <TechGroup>
         {result}
-        <button onClick={handleClick}></button>
+        <Button className="tech-button" onClick={handleClick}>
+          <Icon name="CHEVRON" rotate={-180} fill="white" />
+        </Button>
       </TechGroup>
     )
   }

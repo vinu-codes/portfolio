@@ -26,14 +26,14 @@ const Library = () => {
   return (
     <Section id="library">
       <Main title="My library" subtitle="Component Library"></Main>
-      <Dropdown
+      {/* <Dropdown
         options={state.dropdown}
         name="dropdown"
         callback={({ name, value }) => {
           setState({ ...state, [name]: value })
         }}
-      />
-      <Toggle
+      /> */}
+      {/* <Toggle
         className="toggle"
         value={state.toggle}
         name="toggle"
@@ -43,7 +43,7 @@ const Library = () => {
         <Accordion name="accordion" title="title 2">
           <p>this is inside accordionv2</p>
         </Accordion>
-      </AccordionContainer>
+      </AccordionContainer> */}
       {/* <Modal active={true} title="Modal">
         children
       </Modal> */}

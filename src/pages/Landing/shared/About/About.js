@@ -3,6 +3,7 @@ import { Main } from '@common/Main'
 import { Section } from '@common/Section'
 import { MobileTech } from './MobileTech'
 import { Tech } from './Tech'
+import { media } from '@common/Theme'
 
 import styled from 'styled-components'
 
@@ -14,11 +15,17 @@ const aboutMeInfo = `I am a frontend developer with an accounting background and
 const MainContainer = styled.div`
   position: relative;
   width: 100%;
-  height: calc(100vh - 80px);
+  padding-bottom: 80px;
+  ${media.md`
+    height: calc(100vh + 80px);
+    padding-bottom: 0px;
+  `};
   .main.about {
+    ${media.md`
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    `}
   }
 `
 
@@ -34,8 +41,8 @@ const About = () => (
       />
 
       <Tech />
+      <MobileTech />
     </MainContainer>
-    <MobileTech />
   </Section>
 )
 

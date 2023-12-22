@@ -13,8 +13,8 @@ const routes = [
 const Layout = ({ children, hero }) => (
   <Provider>
     <NavBar routes={routes} />
-    {hero}
-    <Content>{children}</Content>
+
+    {children}
     <Footer />
   </Provider>
 )

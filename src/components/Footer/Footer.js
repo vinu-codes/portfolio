@@ -51,7 +51,7 @@ const DownloadLink = styled.a`
 const FooterContainer = styled.div`
   ${DarkStyle};
   padding-bottom: 24px;
-  margin-top: 48px;
+  margin-top: 0;
   padding-top: 48px;
   div.row {
     display: flex;

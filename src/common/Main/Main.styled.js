@@ -50,15 +50,15 @@ const Info = styled.div`
     text-align: center;
     font-size: 18px;
     line-height: 32px;
-    font-weight: 300;
+    font-weight: ${font.thin};
   }
   ${media.sm`
     background: transparent;
     margin-bottom: 0;
     p {
       color: rgb(135 135 135);
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 18px;
+      line-height: 32px;
       font-weight: ${font.thin};
     }
   `};
