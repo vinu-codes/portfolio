@@ -75,9 +75,17 @@ const MobileItem = styled.li`
   padding: 0;
   width: 0;
   padding: 36px;
+  cursor: pointer;
+  span {
+    &:hover {
+      color: #6a6cff;
+      font-weight: 700;
+    }
+  }
 `
 
 const MobileButton = styled.button`
+  cursor: pointer;
   width: 72px;
   height: 72px;
   display: flex;
@@ -116,6 +124,7 @@ const Group = styled.ul`
 `
 
 const Item = styled.li`
+  cursor: pointer;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -141,6 +150,7 @@ const Image = styled.div`
   height: 64px;
   width: 64px;
   display: none;
+  cursor: pointer;
   img {
     width: 100%;
     height: 100%;
