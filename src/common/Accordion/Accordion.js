@@ -1,23 +1,48 @@
-import React, { useContext } from 'react'
-import { Context } from './Provider'
+import React from 'react'
 import {
   AccordionContainer,
-  AccordionExpander,
   AccordionHeader,
+  AccordionExpander,
+  AccordionContent,
 } from './Accordion.styled'
-// accordion with {}
+import { Context } from './Provider'
+import { useContext } from 'react'
+import { getActiveItem, checkForNameOnArray } from './utils'
 
-const Accordion = ({ title, name = 'acc1', children }) => {
+const updateArrayByName = (state, name) => {
+  if (!state || !state.length) return []
+
+  const result = state.map((item) => {
+    if (item.name === name) {
+      return { ...item, value: !item.value }
+    }
+    return { ...item, value: false }
+  })
+  return result
+}
+
+const Accordion = ({ title, name, children }) => {
   const [state, setState] = useContext(Context)
 
-  const handleSelect = (name) => {}
+  const handleSelect = (name) => {
+    const findMatch = checkForNameOnArray(state, name)
+    if (findMatch) {
+      setState(updateArrayByName(state, name))
+    } else {
+      setState([...state, { name, value: true }])
+    }
+  }
+
+  const isActive = getActiveItem(state, name)
 
   return (
     <AccordionContainer>
       <AccordionHeader onClick={() => handleSelect(name)}>
-        {title}
+        {title && <span>{title}</span>}
       </AccordionHeader>
-      <AccordionExpander>{children}</AccordionExpander>
+      <AccordionExpander isActive={isActive}>
+        <AccordionContent>{children}</AccordionContent>
+      </AccordionExpander>
     </AccordionContainer>
   )
 }

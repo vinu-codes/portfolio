@@ -4,6 +4,9 @@ import { TechRender } from '@components/TechCard'
 import { Button } from '@common/Button'
 import { Dropdown } from '@common/Dropdown/Dropdown'
 import { Toggle } from '@common/Toggle'
+import { Accordion } from '@common/Accordion'
+import { Content } from '@common/Content.js'
+import { Provider as AccordionContainer } from '@common/Accordion'
 
 const LandingPage = () => {
   const [state, setState] = useState({
@@ -39,6 +42,14 @@ const LandingPage = () => {
         name="toggle"
         callback={handleToggleCallback}
       />
+      <AccordionContainer>
+        <Accordion name="accordion" title="title 2">
+          <p>this is inside accordionv2</p>
+        </Accordion>
+      </AccordionContainer>
+      <Content>
+        <div>children for content</div>
+      </Content>
     </div>
   )
 }
