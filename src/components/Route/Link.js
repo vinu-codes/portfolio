@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import NavigationContext from './Context'
+import { Context } from './Context'
 import styled, { css } from 'styled-components'
 
 const isActiveFn = (props) => {
@@ -23,13 +23,14 @@ const Anchor = styled.a`
   color: black;
   text-decoration: none;
   padding: 12px;
+  cursor: pointer;
   transition: 0.3s all ease-in-out;
   ${isActiveFn};
   ${mbFn};
 `
 
 const Link = ({ to, children }) => {
-  const { navigate, currentPath } = useContext(NavigationContext)
+  const { navigate, currentPath } = useContext(Context)
 
   const handleClick = (event) => {
     console.log(event)

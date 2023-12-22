@@ -23,42 +23,6 @@ const monokiTheme = css`
   }
 `
 
-const greyTheme = css`
-  span {
-    font-size: 14px;
-    line-height: 21px;
-    &.string {
-      color: white;
-    }
-    &.number-item {
-      color: white;
-    }
-    &.boolean {
-      color: white;
-    }
-    &.null {
-      color: white;
-    }
-    &.key {
-      color: grey;
-    }
-  }
-`
-const getTheme = (val) => {
-  if (!val || !val.length) return 'DEFAULT'
-  const resultTheme = val.toUpperCase()
-  return resultTheme
-}
-
-const themePicker = (theme) => {
-  const match = getTheme(theme)
-  return {
-    GREY: greyTheme,
-    MONOKI: monokiTheme,
-    DEFAULT: monokiTheme,
-  }[match]
-}
-
 const SyntaxPre = styled.pre`
   outline: 1px solid transparent;
   padding: 8px;
@@ -81,7 +45,7 @@ const syntaxHighlight = (json) => {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
   return updateJson.replace(
-    /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
+    /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)/g,
     function (match) {
       let cls = 'number-item'
       if (/^"/.test(match)) {

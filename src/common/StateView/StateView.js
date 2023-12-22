@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import { useOnClickOutside } from './hooks/useOnClickOutside'
 import { SyntaxPre, syntaxHighlight } from './Syntax'
 
 const delay = (time) => new Promise((resolve) => setTimeout(resolve, time))

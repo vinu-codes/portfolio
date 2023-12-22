@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { NavigationContext } from './Context'
+import { Context } from './Context'
 
-const NavigationProvider = ({ children }) => {
+const Provider = ({ children }) => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
 
   useEffect(() => {
@@ -22,10 +22,10 @@ const NavigationProvider = ({ children }) => {
   }
 
   return (
-    <NavigationContext.Provider value={{ currentPath, navigate }}>
+    <Context.Provider value={{ currentPath, navigate }}>
       {children}
-    </NavigationContext.Provider>
+    </Context.Provider>
   )
 }
 
-export { NavigationProvider }
+export { Provider }
