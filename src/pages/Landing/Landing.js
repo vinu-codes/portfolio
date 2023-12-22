@@ -1,54 +1,17 @@
 import React, { useState } from 'react'
-
 import { Layout } from '@components/Layout'
-import { Main } from '@common/Main'
 
 import { Intro } from './shared/Intro'
+import { Tech } from './shared/Tech'
 import { About } from './shared/About'
+import { Library } from './shared/Library'
 
-import { Icon, IconContainer } from '@common/Icon'
+const LandingPage = () => (
+  <Layout hero={<Intro />}>
+    <About />
+    <Tech />
+    <Library />
+  </Layout>
+)
 
-const LandingPage = () => {
-  const [state, setState] = useState({
-    toggle: true,
-    dropdown: [
-      { label: 'Thor', id: 1, active: false },
-      { label: 'Captain America', id: 2, active: false },
-      { label: 'Iron Man', id: 3, active: false },
-      { label: 'Extra Item', id: 4, active: false },
-      { label: 'Extra sdfsdf', id: 5, active: false },
-    ],
-  })
-
-  const handleToggleCallback = (data) => {
-    setState({ ...state, [data.name]: data.value })
-  }
-
-  return (
-    <Layout hero={<Intro />}>
-      <About />
-      <TechRender />
-
-      <Dropdown
-        options={state.dropdown}
-        name="dropdown"
-        callback={({ name, value }) => {
-          setState({ ...state, [name]: value })
-        }}
-      />
-      <Toggle
-        className="toggle"
-        value={state.toggle}
-        name="toggle"
-        callback={handleToggleCallback}
-      />
-      <AccordionContainer>
-        <Accordion name="accordion" title="title 2">
-          <p>this is inside accordionv2</p>
-        </Accordion>
-      </AccordionContainer>
-    </Layout>
-  )
-}
-
-export default LandingPage
+export { LandingPage }

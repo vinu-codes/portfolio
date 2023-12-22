@@ -23,6 +23,11 @@ const media = {
       ${css(...args)};
     }
   `,
+  lg: (...args) => css`
+    @media ${sizes.lg} {
+      ${css(...args)};
+    }
+  `,
 }
 
 export { media }

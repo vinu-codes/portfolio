@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { media, mtFn, mbFn } from '@common/Theme'
+import { media, mtFn, mbFn, ptFn } from '@common/Theme'
 
 const MainWrapper = styled.div`
   padding: 20px;
@@ -8,6 +8,7 @@ const MainWrapper = styled.div`
   align-items: center;
   gap: 10px;
   ${mtFn};
+  ${ptFn};
 `
 
 const Subtitle = styled.div`
@@ -26,7 +27,6 @@ const Subtitle = styled.div`
 const Title = styled.div`
   width: 100%;
   max-width: 600px;
-  margin-bottom: 70px;
   h2.title {
     margin: 0;
     text-align: center;

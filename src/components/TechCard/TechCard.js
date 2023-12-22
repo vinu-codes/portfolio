@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { TechLogo } from './TechLogo'
-import { media } from '@utils'
+import { media } from '@common/Theme'
 
 const ListItem = styled.li`
   list-style: none;
@@ -22,7 +22,6 @@ const ListItem = styled.li`
 
 const Card = styled.div`
   max-width: 140px;
-  /* min-width: 140px; */
   height: 84px;
   list-style: none;
   margin: 0;

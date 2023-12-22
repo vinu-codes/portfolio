@@ -8,13 +8,15 @@ const Intro = () => (
   <Hero>
     <Main
       id="home"
+      className="intro"
+      pt={72}
       subtitle="Front End Developer"
       title="Hi my name is Vinu, welcome to my portfolio!"
       config={{ hasTypeWriter: true }}
     >
       <Button>
         <span>See my work</span>
-        <IconContainer>
+        <IconContainer ml={5}>
           <Icon
             name="ARROW"
             stroke="white"

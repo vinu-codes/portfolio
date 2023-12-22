@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { media } from '@common/Theme'
 import image from './assets/bg.svg'
 
 const SectionContainer = styled.div`
@@ -15,10 +16,21 @@ const SectionContainer = styled.div`
   min-height: 700px;
   max-height: 120rem;
   position: relative;
+
+  ${media.md`
+    height: calc(100vh - 90px);
+    min-height: calc(100vh - 90px);
+  `};
+
+  .main.intro {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 `
 
-const Hero = ({ children }) => {
-  return <SectionContainer imgSrc={image}>{children}</SectionContainer>
-}
+const Hero = ({ children }) => (
+  <SectionContainer imgSrc={image}>{children}</SectionContainer>
+)
 
 export { Hero }

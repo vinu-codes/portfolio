@@ -24,4 +24,10 @@ const mlFn = ({ ml }) =>
     margin-left: ${ml}px;
   `
 
-export { mrFn, mtFn, mbFn, mlFn }
+const ptFn = ({ pt }) =>
+  (pt || pt === 0) &&
+  css`
+    padding-top: ${pt}px;
+  `
+
+export { mrFn, mtFn, mbFn, mlFn, ptFn }

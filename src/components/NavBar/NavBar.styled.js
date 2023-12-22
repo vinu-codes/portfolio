@@ -1,5 +1,19 @@
 import styled, { css } from 'styled-components'
-import { media, colors } from '@common/Theme'
+import { media, font, colors } from '@common/Theme'
+
+const DesktopTitle = styled.h2`
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #2a2b66;
+  margin-left: 16px;
+  display: none;
+  ${media.md`
+    display: block;
+  `};
+`
 
 const Container = styled.div`
   width: 100%;
@@ -8,6 +22,7 @@ const Container = styled.div`
   max-height: 72px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 16px;
@@ -62,6 +77,7 @@ const MobileGroup = styled.ul`
   padding: 0;
   display: flex;
   flex-direction: column;
+  width: 100%;
 `
 
 const MobileItem = styled.li`
@@ -69,6 +85,10 @@ const MobileItem = styled.li`
   padding: 0;
   width: 0;
   padding: 36px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   span {
     &:hover {
@@ -133,21 +153,25 @@ const Item = styled.li`
   }
   span {
     font-size: 16px;
-    font-weight: 500;
+    color: ${colors.navyBlue};
+    font-weight: ${font.thin};
   }
   ${(props) =>
     props.isActive &&
     css`
-      border-bottom: 1px solid black;
-    `}
+      span {
+        color: ${colors.lightPurple};
+        font-weight: ${font.bold};
+      }
+    `};
 `
 
 const Image = styled.div`
   border-radius: 50%;
   overflow: hidden;
   background: grey;
-  height: 64px;
-  width: 64px;
+  height: 48px;
+  width: 48px;
   display: none;
   cursor: pointer;
   border: 2px solid ${colors.navyBlue};
@@ -170,5 +194,6 @@ export {
   MobileMenu,
   Item,
   MobileGroup,
+  DesktopTitle,
   MobileItem,
 }

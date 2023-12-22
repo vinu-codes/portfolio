@@ -12,8 +12,11 @@ import {
   MobileButton,
   MobileGroup,
   MobileItem,
+  DesktopTitle,
 } from './NavBar.styled'
 import profile from './assets/profile.png'
+import styled from 'styled-components'
+
 import { NavigationContext } from '@components/Route'
 
 const NavBar = ({ title, routes = [] }) => {
@@ -51,25 +54,40 @@ const NavBar = ({ title, routes = [] }) => {
     )
   }
 
-  const renderMenuItems = () => {
-    if (!routes || !routes.length) return null
-
-    const handleClick = (path) => {
-      navigate(path)
+  const handleClick = (path) => {
+    navigate(path)
+    if (isActive) {
+      setIsActive(false)
     }
+  }
 
-    const result = routes.map((route) => {
-      return (
-        <Item
-          key={route.label}
-          isActive={currentPath === route.path}
-          onClick={() => handleClick(route.path)}
-        >
-          {route.label}
-        </Item>
-      )
-    })
-    return result
+  const renderDesktopItems = () => {
+    if (!routes || !routes.length) return null
+    return routes.map((route) => (
+      <Item
+        key={route.label}
+        className={currentPath === route.path ? 'active' : ''}
+        isActive={currentPath === route.path}
+        onClick={() => handleClick(route.path)}
+      >
+        <span>{route.label}</span>
+      </Item>
+    ))
+  }
+
+  const renderMobileItems = () => {
+    if (!routes || !routes.length) return null
+    const result = routes.map((route) => (
+      <MobileItem
+        key={route.label}
+        className="mobile-item"
+        isActive={currentPath === route.path}
+        onClick={() => handleClick(route.path)}
+      >
+        <span>{route.label}</span>
+      </MobileItem>
+    ))
+    return <MobileGroup>{result}</MobileGroup>
   }
 
   return (
@@ -77,28 +95,14 @@ const NavBar = ({ title, routes = [] }) => {
       <Image onClick={handleProfileClick}>
         <img src={profile} />
       </Image>
+      <DesktopTitle>Coding the Front End</DesktopTitle>
       <Group>
-        {renderMenuItems()}
+        {renderDesktopItems()}
         <Item>
           <span onClick={handleGitHub}>Github</span>
         </Item>
       </Group>
-      <MobileMenu className="mobile-menu">
-        <MobileGroup className="mobile-group">
-          <MobileItem className="mobile-item">
-            <span>Home</span>
-          </MobileItem>
-          <MobileItem>
-            <span>About</span>
-          </MobileItem>
-          <MobileItem>
-            <span>Library</span>
-          </MobileItem>
-          <MobileItem>
-            <span>Github</span>
-          </MobileItem>
-        </MobileGroup>
-      </MobileMenu>
+      <MobileMenu className="mobile-menu">{renderMobileItems()}</MobileMenu>
       <MobileButton onClick={toggleMenu}>
         <IconContainer>
           <Icon
