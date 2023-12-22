@@ -4,9 +4,15 @@ import { NavBar } from '@components/NavBar'
 import { Content } from '@common/Content'
 import { Footer } from '@components/Footer'
 
+const routes = [
+  { label: 'Home', path: '/home' },
+  { label: 'About', path: '/about' },
+  { label: 'Library', path: '/library' },
+]
+
 const Layout = ({ children, hero }) => (
   <Provider>
-    <NavBar />
+    <NavBar routes={routes} />
     {hero}
     <Content>{children}</Content>
     <Footer />

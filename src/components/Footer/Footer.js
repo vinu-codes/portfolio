@@ -118,15 +118,6 @@ const Footer = () => (
     <div className="row">
       <ul>
         <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/library">Library</Link>
-        </li>
-        <li>
           <Link to="https://github.com/vinu-codes">Github</Link>
         </li>
         <li>

@@ -1,8 +1,8 @@
 import { useContext } from 'react'
-import { Context } from './Context'
+import { NavigationContext } from './Context'
 
 const Route = ({ path, children }) => {
-  const { currentPath } = useContext(Context)
+  const { currentPath } = useContext(NavigationContext)
 
   if (path === currentPath) {
     return children

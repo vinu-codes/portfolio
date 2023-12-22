@@ -141,6 +141,11 @@ const Item = styled.li`
     font-size: 16px;
     font-weight: 500;
   }
+  ${(props) =>
+    props.isActive &&
+    css`
+      border-bottom: 1px solid black;
+    `}
 `
 
 const Image = styled.div`

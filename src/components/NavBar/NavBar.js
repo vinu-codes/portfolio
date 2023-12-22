@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Context } from '@components/Route'
 import { Icon } from '@common/Icon'
 import { useSize } from '@hooks/useSize'
 import {
@@ -15,9 +14,10 @@ import {
   MobileItem,
 } from './NavBar.styled'
 import profile from './assets/profile.png'
+import { NavigationContext } from '@components/Route'
 
-const NavBar = ({ title }) => {
-  const { currentPath } = useContext(Context)
+const NavBar = ({ title, routes = [] }) => {
+  const { currentPath, navigate } = useContext(NavigationContext)
   const [isActive, setIsActive] = useState(false)
   const { width } = useSize()
 
@@ -35,23 +35,52 @@ const NavBar = ({ title }) => {
     body.style.overflow = isActive ? 'auto' : 'hidden'
   }
 
+  const handleGitHub = () => {
+    window.open(
+      'https://github.com/vinu-codes',
+      '_blank',
+      'noopener,noreferrer',
+    )
+  }
+
+  const handleProfileClick = () => {
+    window.open(
+      'https://www.linkedin.com/in/vinujk/',
+      '_blank',
+      'noopener,noreferrer',
+    )
+  }
+
+  const renderMenuItems = () => {
+    if (!routes || !routes.length) return null
+
+    const handleClick = (path) => {
+      navigate(path)
+    }
+
+    const result = routes.map((route) => {
+      return (
+        <Item
+          key={route.label}
+          isActive={currentPath === route.path}
+          onClick={() => handleClick(route.path)}
+        >
+          {route.label}
+        </Item>
+      )
+    })
+    return result
+  }
+
   return (
     <Container className={isActive ? 'active' : 'not_active'}>
-      <Image>
+      <Image onClick={handleProfileClick}>
         <img src={profile} />
       </Image>
       <Group>
+        {renderMenuItems()}
         <Item>
-          <span>Home</span>
-        </Item>
-        <Item>
-          <span>About</span>
-        </Item>
-        <Item>
-          <span>Library</span>
-        </Item>
-        <Item>
-          <span>Github</span>
+          <span onClick={handleGitHub}>Github</span>
         </Item>
       </Group>
       <MobileMenu className="mobile-menu">

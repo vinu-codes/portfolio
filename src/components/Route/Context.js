@@ -1,5 +1,5 @@
 import { createContext } from 'react'
 
-const Context = createContext()
+const NavigationContext = createContext()
 
-export { Context }
+export { NavigationContext }
