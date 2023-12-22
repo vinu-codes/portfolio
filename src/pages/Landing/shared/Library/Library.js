@@ -5,6 +5,7 @@ import { Accordion } from '@common/Accordion'
 import { Section } from '@common/Section'
 import { Provider as AccordionContainer } from '@common/Accordion'
 import { Main } from '@common/Main'
+import { Modal } from '@common/Modal'
 
 const Library = () => {
   const [state, setState] = useState({
@@ -43,6 +44,9 @@ const Library = () => {
           <p>this is inside accordionv2</p>
         </Accordion>
       </AccordionContainer>
+      <Modal active={true} title="Modal">
+        children
+      </Modal>
     </Section>
   )
 }
