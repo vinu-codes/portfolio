@@ -118,6 +118,8 @@ const TechGroup = styled.ul`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 20px;
   button.tech-button {
     animation: ${animateChevron} 0.5s ease-in-out infinite alternate;
   }
@@ -139,6 +141,9 @@ const TechItem = styled.li`
   margin-bottom: 16px;
   position: relative;
   transition: all 0.3s ease-in-out;
+  &.last {
+    background: red;
+  }
   span {
     font-size: 16px;
     color: ${colors.lightGrey};
@@ -197,18 +202,21 @@ const Tech = () => {
 
   const renderTech = () => {
     if (!items || !items.length) return null
-    const result = items.map((item, index) => (
-      <TechItem
-        style={{
-          transform: `translateY(${-100 * imageIndex}%)`,
-        }}
-        color={item.color}
-        key={index}
-      >
-        <TechLogo name={item.name} />
-        <span>{item.label}</span>
-      </TechItem>
-    ))
+    const result = items.map((item, index) => {
+      const style = { transform: `translateY(${100 * imageIndex}%)` }
+      const lastStyle = { transform: `translateY(${0 + 100}%)` }
+      return (
+        <TechItem
+          style={index === items.length - 1 ? lastStyle : style}
+          color={item.color}
+          key={index}
+          className={index === items.length - 1 ? 'last' : 'not-last'}
+        >
+          <TechLogo name={item.name} />
+          <span>{item.label}</span>
+        </TechItem>
+      )
+    })
     return (
       <TechGroup>
         {result}
