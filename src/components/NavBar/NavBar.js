@@ -11,6 +11,8 @@ import {
   IconContainer,
   MobileMenu,
   MobileButton,
+  MobileGroup,
+  MobileItem,
 } from './NavBar.styled'
 import profile from './assets/profile.png'
 
@@ -52,21 +54,21 @@ const NavBar = ({ title }) => {
           <span>Github</span>
         </Item>
       </Group>
-      <MobileMenu>
-        <ul>
-          <Item>
+      <MobileMenu className="mobile-menu">
+        <MobileGroup className="mobile-group">
+          <MobileItem className="mobile-item">
             <span>Home</span>
-          </Item>
-          <Item>
+          </MobileItem>
+          <MobileItem>
             <span>About</span>
-          </Item>
-          <Item>
+          </MobileItem>
+          <MobileItem>
             <span>Library</span>
-          </Item>
-          <Item>
+          </MobileItem>
+          <MobileItem>
             <span>Github</span>
-          </Item>
-        </ul>
+          </MobileItem>
+        </MobileGroup>
       </MobileMenu>
 
       <MobileButton onClick={toggleMenu}>

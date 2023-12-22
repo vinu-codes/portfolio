@@ -12,45 +12,6 @@ const mrFn = ({ mr }) =>
   css`
     margin-right: ${mr}px;
   `
-
-const MobileMenu = styled.div`
-  width: 100%;
-  display: flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  ${media.md`
-    display: none;
-  `};
-  .active & {
-    display: flex;
-    ${media.md`
-      display: none;
-    `};
-  }
-  .not_active & {
-    display: none;
-  }
-`
-
-const MobileButton = styled.button`
-  width: 72px;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  outline: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  ${media.md`
-    display: none;
-  `};
-`
-
 const Container = styled.div`
   width: 100%;
   height: 72px;
@@ -73,14 +34,64 @@ const Container = styled.div`
     min-height: 100vh;
     max-height: 100vh;
     box-shadow: none;
-
     ${media.md`
-      height: 72px;
-      min-height: 72px;
-      max-height: 72px;
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
+    height: 72px;
+    min-height: 72px;
+    max-height: 72px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
+  `};
+  }
+`
+const MobileMenu = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: none;
+  margin-top: 72px;
+  ${media.md`
+    display: none;
+  `};
+  .active & {
+    display: flex;
+    ${media.md`
+      display: none;
     `};
   }
+  .not_active & {
+    display: none;
+  }
+`
+
+const MobileGroup = styled.ul`
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+`
+
+const MobileItem = styled.li`
+  list-style: none;
+  padding: 0;
+  width: 0;
+  padding: 36px;
+`
+
+const MobileButton = styled.button`
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  ${media.md`
+    display: none;
+  `};
 `
 
 const IconContainer = styled.div`
@@ -148,4 +159,6 @@ export {
   MobileButton,
   MobileMenu,
   Item,
+  MobileGroup,
+  MobileItem,
 }
