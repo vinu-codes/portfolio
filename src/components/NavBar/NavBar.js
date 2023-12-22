@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Icon } from '@common/Icon'
 import { useSize } from '@hooks/useSize'
+import { NavigationContext } from '@components/Route'
 import {
   Container,
   Image,
@@ -15,9 +16,6 @@ import {
   DesktopTitle,
 } from './NavBar.styled'
 import profile from './assets/profile.png'
-import styled from 'styled-components'
-
-import { NavigationContext } from '@components/Route'
 
 const NavBar = ({ title, routes = [] }) => {
   const { currentPath, navigate } = useContext(NavigationContext)
@@ -93,7 +91,7 @@ const NavBar = ({ title, routes = [] }) => {
   return (
     <Container className={isActive ? 'active' : 'not_active'}>
       <Image onClick={handleProfileClick}>
-        <img src={profile} />
+        <img alt="profile" src={profile} />
       </Image>
       <DesktopTitle>Coding the Front End</DesktopTitle>
       <Group>

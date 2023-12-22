@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { media, mtFn, mbFn, ptFn } from '@common/Theme'
+import { media, mtFn, mbFn, ptFn, font } from '@common/Theme'
 
 const MainWrapper = styled.div`
   padding: 20px;
@@ -46,7 +46,7 @@ const Info = styled.div`
   border-radius: 10px;
   margin-bottom: 24px;
   p {
-    color: #000;
+    color: rgb(135 135 135);
     text-align: center;
     font-size: 18px;
     line-height: 32px;
@@ -56,9 +56,10 @@ const Info = styled.div`
     background: transparent;
     margin-bottom: 0;
     p {
-      color: #aeaeae;
+      color: rgb(135 135 135);
       font-size: 16px;
       line-height: 24px;
+      font-weight: ${font.thin};
     }
   `};
 `

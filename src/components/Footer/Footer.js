@@ -3,15 +3,6 @@ import styled, { css } from 'styled-components'
 import { Link } from '@components/Route'
 import resume from './resume.pdf'
 
-const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 12px;
-  width: 24px;
-  height: 24px;
-`
-
 const DarkStyle = css`
   box-shadow: 11px 0px 12px 6px rgba(0, 0, 0, 0.3);
   background: linear-gradient(

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Main } from '@common/Main'
-import { Content } from '@common/Content'
 import { Section } from '@common/Section'
 
 const aboutMeInfo = `I am a frontend developer with an accounting background and a strong passion

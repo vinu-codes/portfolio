@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const TypeWriter = ({ text = 'Hello', speed = 80 }) => {
   const index = useRef(0)
@@ -19,7 +19,7 @@ const TypeWriter = ({ text = 'Hello', speed = 80 }) => {
     return () => {
       clearTimeout(timer)
     }
-  }, [currentText, text])
+  }, [currentText, speed, text])
 
   return <p>{currentText}</p>
 }
