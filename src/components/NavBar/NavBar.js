@@ -70,7 +70,6 @@ const NavBar = ({ title }) => {
           </MobileItem>
         </MobileGroup>
       </MobileMenu>
-
       <MobileButton onClick={toggleMenu}>
         <IconContainer>
           <Icon
