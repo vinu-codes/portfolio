@@ -2,8 +2,9 @@ import styled, { css } from 'styled-components'
 
 const sizes = {
   xs: '(min-width: 480px)',
-  sm: '(min-width: 480px)',
-  md: '(min-width: 480px)',
+  sm: '(min-width: 576px)',
+  md: '(min-width: 768px)',
+  lg: '(min-width: 1200px)',
 }
 
 const media = {

@@ -15,9 +15,7 @@ const Icon = ({
   fill = 'default',
   stroke = 'default',
   viewBox = '0 0 20 20',
-  ml,
-  mr,
-  flip = false,
+  flip,
   ...props
 }) => {
   if (!isValid(name)) return null
@@ -38,10 +36,8 @@ const Icon = ({
       height={`${size}px`}
       viewBox={viewBox}
       rotate={rotate}
-      className={name}
       flip={flip}
-      ml={ml}
-      mr={mr}
+      className={name}
     >
       <Path
         size={size}

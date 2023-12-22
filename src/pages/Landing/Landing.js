@@ -26,8 +26,7 @@ const LandingPage = () => {
   }
 
   return (
-    <Layout>
-      <Hero />
+    <Layout hero={<Hero />}>
       <TechRender />
       <Button>button</Button>
       <Dropdown

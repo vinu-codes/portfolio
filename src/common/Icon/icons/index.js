@@ -6,6 +6,7 @@ import SAD from './Sad'
 import SMILE from './Smile'
 import CLOSE from './Close'
 import LINKED_IN from './LinkedIn'
+import HAMBURGER from './Hamburger'
 import RESUME from './Resume'
 import MENU from './Menu'
 import GITHUB from './Github'
@@ -17,6 +18,7 @@ export {
   RESUME,
   CLOSE,
   ARROW,
+  HAMBURGER,
   SMILE,
   CHECKBOX_FILLED,
   CHECKBOX,

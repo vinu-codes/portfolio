@@ -1,11 +1,19 @@
 import styled, { css } from 'styled-components'
 
-const Svg = styled.svg.attrs({ className: 'SVG' })`
+const obj = { className: 'ICON' }
+
+const Svg = styled.svg.attrs(obj)`
   transition: all 0.2s ease-in-out;
   ${(props) =>
     props.rotate &&
     css`
       transform: rotate(${props.rotate}deg);
+    `};
+  ${(props) =>
+    props.flip &&
+    css`
+      transform: scale(-1, 1);
+      transform-origin: center;
     `};
 `
 

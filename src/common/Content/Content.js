@@ -18,7 +18,8 @@ const ContentContainer = styled.div`
   `};
 `
 
-const Content = ({ children }) => {
-  return <ContentContainer className="content">{children}</ContentContainer>
-}
+const Content = ({ children }) => (
+  <ContentContainer className="content">{children}</ContentContainer>
+)
+
 export { Content }

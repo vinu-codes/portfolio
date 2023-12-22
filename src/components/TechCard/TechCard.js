@@ -22,7 +22,7 @@ const ListItem = styled.li`
 
 const Card = styled.div`
   max-width: 140px;
-  min-width: 140px;
+  /* min-width: 140px; */
   height: 84px;
   list-style: none;
   margin: 0;
@@ -32,12 +32,12 @@ const Card = styled.div`
   padding-bottom: 24px;
   background: white;
   transition: all 0.2s ease-in-out;
-  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 2px 20px 0px rgba(0, 0, 0, 0.14);
   &:hover {
-    box-shadow: 1px 2px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 2px 20px 0px rgba(0, 0, 0, 0.14);
     transform: scale(1.07);
   }
-  border-radius: 16px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;

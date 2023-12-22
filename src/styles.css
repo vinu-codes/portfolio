@@ -4,17 +4,6 @@ body {
   background: white;
 }
 
-html,
-body {
-  height: 100%;
-}
-
-#root {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-}
-
 * {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
