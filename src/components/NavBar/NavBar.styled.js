@@ -13,6 +13,27 @@ const mrFn = ({ mr }) =>
     margin-right: ${mr}px;
   `
 
+const MobileMenu = styled.div`
+  width: 100%;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  ${media.md`
+    display: none;
+  `};
+  .active & {
+    display: flex;
+    ${media.md`
+      display: none;
+    `};
+  }
+  .not_active & {
+    display: none;
+  }
+`
+
 const MobileButton = styled.button`
   width: 72px;
   height: 72px;
@@ -25,6 +46,9 @@ const MobileButton = styled.button`
   position: absolute;
   top: 0;
   right: 0;
+  ${media.md`
+    display: none;
+  `};
 `
 
 const Container = styled.div`
@@ -42,9 +66,21 @@ const Container = styled.div`
   z-index: 999;
   top: 0;
   left: 0;
-  ${media.md`
-    background: green;
-  `};
+  transition: all 0.1s ease-in-out;
+
+  &.active {
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    box-shadow: none;
+
+    ${media.md`
+      height: 72px;
+      min-height: 72px;
+      max-height: 72px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
+    `};
+  }
 `
 
 const IconContainer = styled.div`
@@ -60,7 +96,31 @@ const Group = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  display: none;
+  margin-left: auto;
+  height: 100%;
+  ${media.md`
+    display: flex;
+  `};
+`
+
+const Item = styled.li`
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 8px;
+  align-items: center;
+  justify-content: center;
+  &:first-child {
+    margin-left: 0;
+  }
+  span {
+    font-size: 16px;
+    font-weight: 500;
+  }
 `
 
 const Image = styled.div`
@@ -80,4 +140,12 @@ const Image = styled.div`
   `};
 `
 
-export { Container, Image, Group, IconContainer, MobileButton }
+export {
+  Container,
+  Image,
+  Group,
+  IconContainer,
+  MobileButton,
+  MobileMenu,
+  Item,
+}

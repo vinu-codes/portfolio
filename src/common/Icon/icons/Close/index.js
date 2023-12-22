@@ -7,7 +7,7 @@ const IconPath = (props) => {
       <path
         d="M4.00003 4L16 16M4 16L16 4.00003"
         stroke={stroke}
-        strokeWidth="1.5"
+        strokeWidth="2"
         strokeLinecap="round"
       />
     </svg>
