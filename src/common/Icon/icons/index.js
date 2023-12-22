@@ -11,6 +11,7 @@ import RESUME from './Resume'
 import MENU from './Menu'
 import GITHUB from './Github'
 import ARROW from './Arrow'
+import SEARCH from './Search'
 
 export {
   SAD,
@@ -19,6 +20,7 @@ export {
   CLOSE,
   ARROW,
   HAMBURGER,
+  SEARCH,
   SMILE,
   CHECKBOX_FILLED,
   CHECKBOX,
