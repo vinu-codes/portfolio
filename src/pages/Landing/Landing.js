@@ -5,8 +5,9 @@ import { Button } from '@common/Button'
 import { Dropdown } from '@common/Dropdown/Dropdown'
 import { Toggle } from '@common/Toggle'
 import { Accordion } from '@common/Accordion'
-import { Content } from '@common/Content'
+
 import { Provider as AccordionContainer } from '@common/Accordion'
+import { PageLayout } from '@components/PageLayout'
 
 const LandingPage = () => {
   const [state, setState] = useState({
@@ -25,7 +26,7 @@ const LandingPage = () => {
   }
 
   return (
-    <div>
+    <PageLayout>
       <Hero />
       <TechRender />
       <Button>button</Button>
@@ -47,10 +48,7 @@ const LandingPage = () => {
           <p>this is inside accordionv2</p>
         </Accordion>
       </AccordionContainer>
-      <Content>
-        <div>children for content</div>
-      </Content>
-    </div>
+    </PageLayout>
   )
 }
 

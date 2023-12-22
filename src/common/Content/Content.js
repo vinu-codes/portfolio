@@ -19,13 +19,6 @@ const ContentContainer = styled.div`
 `
 
 const Content = ({ children }) => {
-  return (
-    <ContentContainer className="content">
-      <div>
-        <div className="content-square" />
-      </div>
-      {children}
-    </ContentContainer>
-  )
+  return <ContentContainer className="content">{children}</ContentContainer>
 }
 export { Content }
