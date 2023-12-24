@@ -29,8 +29,10 @@ const SectionContainer = styled.div`
   }
 `
 
-const Hero = ({ children }) => (
-  <SectionContainer imgSrc={image}>{children}</SectionContainer>
+const Hero = ({ children, ...props }) => (
+  <SectionContainer {...props} imgSrc={image}>
+    {children}
+  </SectionContainer>
 )
 
 export { Hero }

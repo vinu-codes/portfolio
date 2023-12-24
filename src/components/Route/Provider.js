@@ -22,7 +22,7 @@ const Provider = ({ children }) => {
   }
 
   return (
-    <NavigationContext.Provider value={{ currentPath, navigate }}>
+    <NavigationContext.Provider value={[currentPath, navigate]}>
       {children}
     </NavigationContext.Provider>
   )

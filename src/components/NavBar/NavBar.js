@@ -18,7 +18,7 @@ import {
 import profile from './assets/profile.png'
 
 const NavBar = ({ title, routes = [] }) => {
-  const { currentPath, navigate } = useContext(NavigationContext)
+  const [currentPath, navigate] = useContext(NavigationContext)
   const [isActive, setIsActive] = useState(false)
   const { width } = useSize()
 

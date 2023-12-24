@@ -6,6 +6,7 @@ import { Section } from '@common/Section'
 import { Provider as AccordionContainer } from '@common/Accordion'
 import { Main } from '@common/Main'
 import { Modal } from '@common/Modal'
+import { Hero } from '@components/Hero'
 
 const Library = () => {
   const [state, setState] = useState({
@@ -24,8 +25,8 @@ const Library = () => {
   }
 
   return (
-    <Section id="library">
-      <Main title="My library" subtitle="Component Library"></Main>
+    <Hero id="library">
+      <Main pt={100} title="My library" subtitle="Component Library"></Main>
       {/* <Dropdown
         options={state.dropdown}
         name="dropdown"
@@ -47,7 +48,7 @@ const Library = () => {
       {/* <Modal active={true} title="Modal">
         children
       </Modal> */}
-    </Section>
+    </Hero>
   )
 }
 

@@ -5,9 +5,8 @@ import { Icon, IconContainer } from '@common/Icon'
 import { Button } from '@common/Button'
 
 const Intro = () => (
-  <Hero>
+  <Hero id="home">
     <Main
-      id="home"
       className="intro"
       subtitle="Front End Developer"
       title="Hi my name is Vinu, welcome to my portfolio!"
