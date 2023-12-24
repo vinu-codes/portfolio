@@ -28,8 +28,18 @@ const Anchor = styled.a`
   ${mbFn};
 `
 
-const Link = ({ to, children }) => {
-  const { navigate, currentPath } = useContext(NavigationContext)
+const AnchorExternal = styled.a`
+  color: black;
+  text-decoration: none;
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  ${isActiveFn};
+  ${mbFn};
+`
+
+const Link = ({ to, external = false, children, mb }) => {
+  const [currentPath, navigate] = useContext(NavigationContext)
 
   const handleClick = (event) => {
     console.log(event)
@@ -40,7 +50,7 @@ const Link = ({ to, children }) => {
     navigate(to)
   }
 
-  return (
+  return !external ? (
     <Anchor
       isActive={currentPath === to}
       mb={16}
@@ -49,6 +59,10 @@ const Link = ({ to, children }) => {
     >
       {children}
     </Anchor>
+  ) : (
+    <AnchorExternal mb={mb} href={to}>
+      {children}
+    </AnchorExternal>
   )
 }
 

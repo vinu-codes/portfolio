@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useCallback } from 'react'
 import { Icon } from '../Icon'
 import {
   ModalContainer,
@@ -8,12 +8,13 @@ import {
   ModalBody,
 } from './Modal.styled'
 
-const Modal = ({ active = true, title, children }) => {
-  const [isActive, setIsActive] = useState(false)
+const Modal = ({ callback, title, children }) => {
   const ref = useRef(null)
 
   const handleClose = () => {
-    setIsActive(false)
+    callback(false)
+    const body = document.querySelector('body')
+    body.style.overflow = 'auto'
   }
 
   useEffect(() => {
@@ -30,12 +31,23 @@ const Modal = ({ active = true, title, children }) => {
   }, [])
 
   useEffect(() => {
-    if (!!active) {
-      setIsActive(active)
-    }
-  }, [active])
+    const body = document.querySelector('body')
+    body.style.overflow = 'hidden'
+  }, [])
 
-  if (!isActive) return null
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        handleClose()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
   return (
     <React.Fragment>
       <ModalContainer ref={ref}>

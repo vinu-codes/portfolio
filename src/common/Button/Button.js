@@ -13,6 +13,11 @@ const ButtonComponent = styled.button`
   align-items: center;
   transition: all 0.2s ease-in;
 
+  &:focus {
+    outline: none;
+    border: 2px solid transparent;
+  }
+
   span {
     font-size: 16px;
     font-weight: 500;
@@ -38,8 +43,8 @@ const ButtonComponent = styled.button`
   }
 `
 
-const Button = ({ onClick, className, children }) => (
-  <ButtonComponent className={className} onClick={onClick}>
+const Button = ({ onClick, className, children, ...props }) => (
+  <ButtonComponent className={className} onClick={onClick} {...props}>
     {children}
   </ButtonComponent>
 )

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { colors } from '@common/Theme'
 
 const ModalContainer = styled.div`
   position: fixed;
@@ -24,7 +25,7 @@ const ModalContainer = styled.div`
     cursor: pointer;
   }
   .modal-content {
-    margin-top: 16px;
+    margin-top: 32px;
     font-size: 18px;
   }
 `
@@ -35,8 +36,10 @@ const ModalHeader = styled.div`
   align-items: center;
   h2 {
     line-height: 32px;
-    font-size: 28px;
+    font-size: 24px;
     margin: 0;
+    padding-bottom: 8px;
+    color: ${colors.navyBlue};
   }
 `
 
@@ -67,6 +70,14 @@ const ModalBody = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     top: 50%;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 300;
+    strong {
+      color: ${colors.lightPurple};
+    }
   }
 `
 export { ModalContainer, ModalHeader, ModalButton, ModalOverlay, ModalBody }
