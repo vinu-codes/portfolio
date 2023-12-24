@@ -1,3 +1,4 @@
+import { colors } from '@common/Theme'
 import styled, { css } from 'styled-components'
 
 const DarkStyle = css`
@@ -46,9 +47,22 @@ const DownloadLink = styled.a`
 `
 
 const FooterContainer = styled.div`
+  .button-wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
   button {
     a {
       text-decoration: none;
+      width: 100%;
+      display: flex;
+    }
+    &:hover {
+      svg {
+        path {
+          fill: ${colors.lightPurple};
+        }
+      }
     }
   }
   ${DarkStyle};

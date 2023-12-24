@@ -12,12 +12,14 @@ import MENU from './Menu'
 import GITHUB from './Github'
 import ARROW from './Arrow'
 import SEARCH from './Search'
+import DOWNLOAD from './Download'
 
 export {
   SAD,
   GITHUB,
   RESUME,
   CLOSE,
+  DOWNLOAD,
   ARROW,
   HAMBURGER,
   SEARCH,

@@ -21,7 +21,7 @@ const TypeWriter = ({ text = 'Hello', speed = 80 }) => {
     }
   }, [currentText, speed, text])
 
-  return <p>{currentText}</p>
+  return currentText
 }
 
 export { TypeWriter }

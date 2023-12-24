@@ -4,6 +4,8 @@ import resume from './resume.pdf'
 import { DownloadLink, FooterContainer } from './Footer.styled'
 import { Modal } from '@common/Modal'
 import { Button } from '@common/Button'
+import { Icon, IconContainer } from '@common/Icon'
+import { Spacer } from '@common/Spacer'
 
 const Footer = () => {
   const [showModal, setShowModal] = useState(false)
@@ -34,16 +36,39 @@ const Footer = () => {
         <span>Copyright &#169;2024</span>
       </div>
       {showModal && (
-        <Modal title="Download My Resume" callback={handleModal}>
+        <Modal title="Select an option" callback={handleModal}>
           <p>
-            To view my resume, please click the below
-            <strong> download </strong> button.
+            To download my resume, click{' '}
+            <a href={resume} download="resume">
+              here
+            </a>{' '}
+            <Spacer />
+            The resume available will not include private information, please
+            reach out to me on LinkedIn to get the full copy.
           </p>
-          <Button>
-            <a className="link" href={resume} download="resume">
-              <span className="info">Resume</span>
-            </a>
-          </Button>
+          <div className="button-wrapper">
+            <Button>
+              <a className="link" href={resume} download="resume">
+                <span className="info">Download</span>
+                <IconContainer ml={5}>
+                  <Icon name="DOWNLOAD" size={20} stroke="white" />
+                </IconContainer>
+              </a>
+            </Button>
+            <Button>
+              <a className="link" href="https://www.linkedin.com/in/vinujk/">
+                <span className="info">LinkedIn</span>
+                <IconContainer ml={5}>
+                  <Icon
+                    name="LINKED_IN"
+                    size={20}
+                    viewBox="0 0 24 24"
+                    stroke="white"
+                  />
+                </IconContainer>
+              </a>
+            </Button>
+          </div>
         </Modal>
       )}
     </FooterContainer>

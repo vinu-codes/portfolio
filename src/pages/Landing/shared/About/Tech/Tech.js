@@ -142,7 +142,7 @@ const TechItem = styled.li`
   position: relative;
   transition: all 0.3s ease-in-out;
   &.last {
-    background: red;
+    /* background: red; */
   }
   span {
     font-size: 16px;

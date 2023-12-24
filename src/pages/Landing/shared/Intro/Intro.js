@@ -4,27 +4,36 @@ import { Main } from '@common/Main'
 import { Icon, IconContainer } from '@common/Icon'
 import { Button } from '@common/Button'
 
-const Intro = () => (
-  <Hero id="home">
-    <Main
-      className="intro"
-      subtitle="Front End Developer"
-      title="Hi my name is Vinu, welcome to my portfolio!"
-      config={{ hasTypeWriter: true }}
-    >
-      <Button>
-        <span>See my work</span>
-        <IconContainer ml={5}>
-          <Icon
-            name="ARROW"
-            stroke="white"
-            rotate={180}
-            viewBox="-2 -1 20 20"
-          />
-        </IconContainer>
-      </Button>
-    </Main>
-  </Hero>
-)
+const jumpToReleventDiv = (id) => {
+  const releventDiv = document.getElementById(id)
+  if (!releventDiv) return
+  // behavior: "smooth" parameter for smooth movement
+  releventDiv.scrollIntoView({ behavior: 'smooth' })
+}
+
+const Intro = () => {
+  return (
+    <Hero id="home">
+      <Main
+        className="intro"
+        subtitle="Front End Developer"
+        title="Hi my name is Vinu, welcome to my portfolio!"
+        config={{ hasTypeWriter: true }}
+      >
+        <Button onClick={() => jumpToReleventDiv('library')}>
+          <span>See my work</span>
+          <IconContainer ml={5}>
+            <Icon
+              name="ARROW"
+              stroke="white"
+              rotate={180}
+              viewBox="-2 -1 20 20"
+            />
+          </IconContainer>
+        </Button>
+      </Main>
+    </Hero>
+  )
+}
 
 export { Intro }
