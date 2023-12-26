@@ -132,23 +132,36 @@ const Group = styled.ul`
   display: none;
   margin-left: auto;
   height: 100%;
+  align-items: center;
   .github-button {
     border: none;
-    background: white;
+
+    background: ${colors.lightPurple};
+    border: 2px solid transparent;
+    border-radius: 16px;
     cursor: pointer;
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 13px 13px;
     margin-left: 8px;
     align-items: center;
     justify-content: center;
+    max-height: 48px;
     span {
       font-size: 16px;
-      color: ${colors.navyBlue};
+      color: white;
       font-weight: ${font.thin};
+      line-height: 22px;
+      font-weight: ${font.regular};
+    }
+    &:hover {
+      background: white;
+      border: 2px solid ${colors.lightPurple};
+      span {
+        color: ${colors.lightPurple};
+      }
     }
   }
   ${media.md`

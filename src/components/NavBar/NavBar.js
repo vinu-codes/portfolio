@@ -97,7 +97,7 @@ const NavBar = ({ title, routes = [] }) => {
       <Group>
         {renderDesktopItems()}
         <button className="github-button">
-          <span onClick={handleGitHub}>Github</span>
+          <span onClick={handleGitHub}>GitHub</span>
         </button>
       </Group>
       <MobileMenu className="mobile-menu">{renderMobileItems()}</MobileMenu>
