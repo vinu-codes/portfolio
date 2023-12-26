@@ -3,6 +3,7 @@ import { Hero } from '@components/Hero'
 import { Main } from '@common/Main'
 import { Icon, IconContainer } from '@common/Icon'
 import { Button } from '@common/Button'
+import { Solveig } from '@components/Solveig'
 
 const jumpToReleventDiv = (id) => {
   const releventDiv = document.getElementById(id)
@@ -13,26 +14,29 @@ const jumpToReleventDiv = (id) => {
 
 const Intro = () => {
   return (
-    <Hero id="home">
-      <Main
-        className="intro"
-        subtitle="Front End Developer"
-        title="Hi my name is Vinu, welcome to my portfolio!"
-        config={{ hasTypeWriter: true }}
-      >
-        <Button onClick={() => jumpToReleventDiv('library')}>
-          <span>See my work</span>
-          <IconContainer ml={5}>
-            <Icon
-              name="ARROW"
-              stroke="white"
-              rotate={180}
-              viewBox="-2 -1 20 20"
-            />
-          </IconContainer>
-        </Button>
-      </Main>
-    </Hero>
+    <>
+      <Solveig />
+      <Hero id="home">
+        <Main
+          className="intro"
+          subtitle="Front End Developer"
+          title="Hi my name is Vinu, welcome to my portfolio!"
+          config={{ hasTypeWriter: true }}
+        >
+          <Button onClick={() => jumpToReleventDiv('library')}>
+            <span>See my work</span>
+            <IconContainer ml={5}>
+              <Icon
+                name="ARROW"
+                stroke="white"
+                rotate={180}
+                viewBox="-2 -1 20 20"
+              />
+            </IconContainer>
+          </Button>
+        </Main>
+      </Hero>
+    </>
   )
 }
 
