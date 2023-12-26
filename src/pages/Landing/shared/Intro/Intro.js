@@ -3,7 +3,7 @@ import { Hero } from '@components/Hero'
 import { Main } from '@common/Main'
 import { Icon, IconContainer } from '@common/Icon'
 import { Button } from '@common/Button'
-import { Solveig } from '@components/Solveig'
+// import { Solveig } from '@components/Solveig'
 
 const jumpToReleventDiv = (id) => {
   const releventDiv = document.getElementById(id)
@@ -15,7 +15,7 @@ const jumpToReleventDiv = (id) => {
 const Intro = () => {
   return (
     <>
-      <Solveig />
+      {/* <Solveig /> */}
       <Hero id="home">
         <Main
           className="intro"

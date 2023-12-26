@@ -132,6 +132,25 @@ const Group = styled.ul`
   display: none;
   margin-left: auto;
   height: 100%;
+  .github-button {
+    border: none;
+    background: white;
+    cursor: pointer;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 8px;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-size: 16px;
+      color: ${colors.navyBlue};
+      font-weight: ${font.thin};
+    }
+  }
   ${media.md`
     display: flex;
   `};

@@ -9,11 +9,17 @@ const Main = (props) => {
     config = {},
     subtitle,
     title,
-    info,
+    info = [],
     className,
     ...rest
   } = props
   const { hasTypeWriter = false } = config
+
+  const infoRender = () => {
+    return info.map((info, index) => {
+      return <p key={index}>{info}</p>
+    })
+  }
 
   return (
     <MainWrapper className={`main ${className}`} {...rest}>
@@ -30,11 +36,7 @@ const Main = (props) => {
           <h2 className="title">{title}</h2>
         </Title>
       )}
-      {info && (
-        <Info className="info">
-          <p>{info}</p>
-        </Info>
-      )}
+      {info && <Info className="info">{infoRender()}</Info>}
       {children}
     </MainWrapper>
   )

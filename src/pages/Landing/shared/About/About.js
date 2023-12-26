@@ -7,10 +7,16 @@ import { media } from '@common/Theme'
 
 import styled from 'styled-components'
 
-const aboutMeInfo = `I am a frontend developer with an accounting background and a strong passion
+const aboutMeInfo = [
+  `I am a frontend developer with an accounting background and a strong passion
     for technology and coding. My main areas of expertise include HTML, CSS,
     JavaScript, React, and Styled Components. My main goal is to build top-class
-    web applications and websites.`
+    web applications and websites.`,
+
+  `Aside from coding, you'll often find me: 
+    - Lifting Weights: I enjoy the challenge and discipline of weightlifting, both for physical health and mental well-being.
+    - Hiking: Exploring the great outdoors and connecting with nature is one of my favorite ways to unwind.`,
+]
 
 const MainContainer = styled.div`
   position: relative;
