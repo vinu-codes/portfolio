@@ -17,10 +17,13 @@ const Subtitle = styled.div`
   h3.subtitle {
     margin: 0;
     color: #6a6cff;
-    font-weight: 600;
-    line-height: 24px;
     text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    ${media.md`
+    line-height: 24px;
     font-size: 21px;
+    `}
   }
 `
 
@@ -31,9 +34,13 @@ const Title = styled.div`
     margin: 0;
     text-align: center;
     color: #2a2b66;
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 48px;
+    ${media.md`
     font-size: 44px;
     line-height: 64px;
-    font-weight: 600;
+    `}
   }
 `
 

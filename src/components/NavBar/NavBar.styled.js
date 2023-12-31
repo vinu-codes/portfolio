@@ -177,6 +177,7 @@ const Item = styled.li`
   display: flex;
   padding-left: 16px;
   padding-right: 16px;
+  height: 100%;
   margin-left: 8px;
   align-items: center;
   justify-content: center;

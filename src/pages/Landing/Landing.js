@@ -4,11 +4,7 @@ import { NavigationContext } from '@components/Route'
 import { Intro } from './shared/Intro'
 import { About } from './shared/About'
 import { Library } from './shared/Library'
-import { Hero } from '@components/Hero'
 
-const targetElement = {
-  offsetTop: 100,
-}
 const scrollToElement = (id) => {
   const targetElement = document.getElementById(id)
 

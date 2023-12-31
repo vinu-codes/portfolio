@@ -25,18 +25,17 @@ const MainContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  ${media.md`
-    height: calc(100vh - 90px);
-    /* min-height: 1100px; */
-    overflow: hidden;
-  `};
-  .main.about {
+  .main {
     position: relative;
   }
+  ${media.md`
+    height: calc(100vh - 90px);
+    overflow: hidden;
+  `};
 `
 
 const About = () => (
-  <MainContainer className="main-container" id="about">
+  <MainContainer id="about">
     <Main
       className="about"
       subtitle="A bit about me..."

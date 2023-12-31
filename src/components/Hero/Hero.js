@@ -29,7 +29,7 @@ const SectionContainer = styled.div`
 `
 
 const Hero = ({ children, ...props }) => (
-  <SectionContainer {...props} imgSrc={image}>
+  <SectionContainer className="hero" imgSrc={image} {...props}>
     {children}
   </SectionContainer>
 )

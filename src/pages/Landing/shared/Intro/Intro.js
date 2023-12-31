@@ -23,7 +23,7 @@ const Intro = () => {
           title="Hi my name is Vinu, welcome to my portfolio!"
           config={{ hasTypeWriter: true }}
         >
-          <Button onClick={() => jumpToReleventDiv('library')}>
+          <Button mt={32} onClick={() => jumpToReleventDiv('library')}>
             <span>See my work</span>
             <IconContainer ml={5}>
               <Icon

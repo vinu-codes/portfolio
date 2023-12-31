@@ -1,26 +1,40 @@
+import { colors } from '@common/Theme'
 import styled, { css } from 'styled-components'
 
 const SliderContainer = styled.div`
   width: 100%;
-  min-width: 400px;
-  max-width: 400px;
+  min-width: 370px;
+  max-width: 370px;
   height: 300px;
   max-height: 300px;
   position: relative;
   button {
     position: absolute;
-    width: 30px;
-    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
     border: none;
-    background: transparent;
+    border-radius: 10px;
+    border: 2px solid ${colors.lightPurple};
+    background: ${colors.lightPurple};
+    &:hover {
+      background: ${colors.lightPurple};
+    }
+    svg.ICON {
+      path {
+        fill: white;
+      }
+    }
+    &:focus {
+      outline: none;
+    }
     &:nth-child(2) {
-      top: 0;
-      left: 0;
+      left: 10px;
       bottom: 0;
     }
     &:nth-child(3) {
-      top: 0;
-      right: 0;
+      right: 10px;
       bottom: 0;
     }
 

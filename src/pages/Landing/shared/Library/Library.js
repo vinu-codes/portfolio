@@ -13,10 +13,14 @@ import styled from 'styled-components'
 import { media } from '@common/Theme'
 
 const Container = styled.div`
+  min-height: 1100px;
   .main.library {
     ${media.md`
       height: auto;
     `}
+  }
+  .hero {
+    min-height: 1100px;
   }
 `
 
@@ -96,21 +100,10 @@ const Library = () => {
           subtitle="Component Library"
         ></Main>
 
-        {/* <Toggle
-        className="toggle"
-        value={state.toggle}
-        name="toggle"
-        callback={handleToggleCallback}
-      />
-     
-        {/* <Modal active={true} title="Modal">
-        children
-      </Modal> */}
-
         <SliderWrapper>
           <Slider
             items={[
-              { value: accordionExample, label: 'Div' },
+              { value: accordionExample, label: 'Accordion' },
               {
                 value: (
                   <Dropdown
@@ -122,6 +115,17 @@ const Library = () => {
                   />
                 ),
                 label: 'Dropdown',
+              },
+              {
+                value: (
+                  <Toggle
+                    className="toggle"
+                    value={state.toggle}
+                    name="toggle"
+                    callback={handleToggleCallback}
+                  />
+                ),
+                label: 'Toggle',
               },
             ]}
           />

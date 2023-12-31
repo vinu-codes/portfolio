@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { mbFn, mtFn } from '@common/Theme'
 
 const ButtonComponent = styled.button`
   border: none;
@@ -13,6 +14,8 @@ const ButtonComponent = styled.button`
   align-items: center;
   transition: all 0.2s ease-in;
 
+  ${mbFn};
+  ${mtFn};
   &:focus {
     outline: none;
     border: 2px solid transparent;

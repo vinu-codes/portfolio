@@ -17,7 +17,7 @@ import {
 } from './NavBar.styled'
 import profile from './assets/profile.png'
 
-const NavBar = ({ title, routes = [] }) => {
+const NavBar = ({ routes = [] }) => {
   const [currentPath, navigate] = useContext(NavigationContext)
   const [isActive, setIsActive] = useState(false)
   const { width } = useSize()
@@ -54,7 +54,10 @@ const NavBar = ({ title, routes = [] }) => {
 
   const handleClick = (path) => {
     navigate(path)
+
     if (isActive) {
+      const body = document.querySelector('body')
+      body.style.overflow = 'auto'
       setIsActive(false)
     }
   }
@@ -94,7 +97,6 @@ const NavBar = ({ title, routes = [] }) => {
         height: '72px',
         minHeight: '72px',
         width: '100%',
-        background: 'red',
       }}
     >
       <Container className={isActive ? 'active' : 'not_active'}>

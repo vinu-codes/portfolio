@@ -141,9 +141,6 @@ const TechItem = styled.li`
   margin-bottom: 16px;
   position: relative;
   transition: all 0.3s ease-in-out;
-  &.last {
-    /* background: red; */
-  }
   span {
     font-size: 16px;
     color: ${colors.lightGrey};

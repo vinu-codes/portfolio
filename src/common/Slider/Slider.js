@@ -69,12 +69,12 @@ const Slider = ({ items }) => {
       <SliderBox className="slider-box">{renderItems()}</SliderBox>
       <button onClick={handlePrev} className="prev-button">
         <IconContainer className="left">
-          <Icon name="CHEVRON" />
+          <Icon name="CHEVRON" fill={'white'} size={32} />
         </IconContainer>
       </button>
       <button onClick={handleNext} className="next-button">
         <IconContainer className="right">
-          <Icon name="CHEVRON" />
+          <Icon name="CHEVRON" size={32} />
         </IconContainer>
       </button>
       <CircleGroup>{renderCircles()}</CircleGroup>
