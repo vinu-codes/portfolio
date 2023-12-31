@@ -1,23 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import { TechLogo } from './TechLogo'
-import { media } from '@common/Theme'
 
 const ListItem = styled.li`
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 50%;
+  width: 33%;
   margin-top: 16px;
   margin-left: 0;
   display: flex;
   justify-content: center;
-  ${media.xs`
-    width: 33%;
-  `};
-  ${media.sm`
-    width: 20%;
-  `};
 `
 
 const Card = styled.div`

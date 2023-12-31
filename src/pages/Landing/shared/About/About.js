@@ -22,36 +22,34 @@ const MainContainer = styled.div`
   position: relative;
   width: 100%;
   padding-bottom: 80px;
+  min-height: 1100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   ${media.md`
-    /* height: calc(100vh + 80px);
-    padding-bottom: 0px; */
     height: calc(100vh - 90px);
-    min-height: 500px;
+    /* min-height: 1100px; */
+    overflow: hidden;
   `};
   .main.about {
-    ${media.md`
-    /* position: relative;
-    top: 50%;
-    transform: translateY(-50%); */
-    `}
+    position: relative;
   }
 `
 
 const About = () => (
-  <Section id="about">
-    <MainContainer>
-      <Main
-        className="about"
-        subtitle="A bit about me..."
-        title="About me"
-        info={aboutMeInfo}
-        config={{ hasTypeWriter: false }}
-      />
+  <MainContainer className="main-container" id="about">
+    <Main
+      className="about"
+      subtitle="A bit about me..."
+      title="About me"
+      info={aboutMeInfo}
+      config={{ hasTypeWriter: false }}
+    />
 
-      <Tech />
-      <MobileTech />
-    </MainContainer>
-  </Section>
+    <Tech />
+    <MobileTech />
+  </MainContainer>
 )
 
 export { About }

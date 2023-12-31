@@ -89,29 +89,38 @@ const NavBar = ({ title, routes = [] }) => {
   }
 
   return (
-    <Container className={isActive ? 'active' : 'not_active'}>
-      <Image onClick={handleProfileClick}>
-        <img alt="profile" src={profile} />
-      </Image>
-      <DesktopTitle>Coding the Front End</DesktopTitle>
-      <Group>
-        {renderDesktopItems()}
-        <button className="github-button">
-          <span onClick={handleGitHub}>GitHub</span>
-        </button>
-      </Group>
-      <MobileMenu className="mobile-menu">{renderMobileItems()}</MobileMenu>
-      <MobileButton onClick={toggleMenu}>
-        <IconContainer>
-          <Icon
-            flip
-            name={isActive ? 'CLOSE' : 'HAMBURGER'}
-            size={32}
-            stroke="rgb(106, 108, 255)"
-          />
-        </IconContainer>
-      </MobileButton>
-    </Container>
+    <div
+      style={{
+        height: '72px',
+        minHeight: '72px',
+        width: '100%',
+        background: 'red',
+      }}
+    >
+      <Container className={isActive ? 'active' : 'not_active'}>
+        <Image onClick={handleProfileClick}>
+          <img alt="profile" src={profile} />
+        </Image>
+        <DesktopTitle>Coding the Front End</DesktopTitle>
+        <Group>
+          {renderDesktopItems()}
+          <button className="github-button">
+            <span onClick={handleGitHub}>GitHub</span>
+          </button>
+        </Group>
+        <MobileMenu className="mobile-menu">{renderMobileItems()}</MobileMenu>
+        <MobileButton onClick={toggleMenu}>
+          <IconContainer>
+            <Icon
+              flip
+              name={isActive ? 'CLOSE' : 'HAMBURGER'}
+              size={32}
+              stroke="rgb(106, 108, 255)"
+            />
+          </IconContainer>
+        </MobileButton>
+      </Container>
+    </div>
   )
 }
 

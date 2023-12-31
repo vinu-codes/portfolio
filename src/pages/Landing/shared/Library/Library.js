@@ -43,8 +43,8 @@ const Library = () => {
   }
 
   return (
-    <Container>
-      <Hero id="library">
+    <Container id="library">
+      <Hero>
         <Main
           pt={100}
           title="My library"

@@ -13,6 +13,7 @@ const TechGroup = styled.ul`
   margin-right: auto;
   max-width: 900px;
 `
+
 const technologiesCard = [
   { label: 'JS', name: 'JS_GRAPHIC' },
   { label: 'HTML', name: 'HTML_GRAPHIC' },
@@ -22,14 +23,12 @@ const technologiesCard = [
   { label: 'Git', name: 'GIT_GRAPHIC' },
 ]
 
-const TechRender = () => {
-  return (
-    <TechGroup>
-      {technologiesCard.map((tech) => {
-        return <TechCard key={tech.label} label={tech.label} name={tech.name} />
-      })}
-    </TechGroup>
-  )
-}
+const TechRender = () => (
+  <TechGroup>
+    {technologiesCard.map((tech) => {
+      return <TechCard key={tech.label} label={tech.label} name={tech.name} />
+    })}
+  </TechGroup>
+)
 
 export { TechRender }

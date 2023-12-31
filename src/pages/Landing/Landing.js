@@ -6,11 +6,25 @@ import { About } from './shared/About'
 import { Library } from './shared/Library'
 import { Hero } from '@components/Hero'
 
-const jumpToReleventDiv = (id) => {
-  const releventDiv = document.getElementById(id)
-  if (!releventDiv) return
-  // behavior: "smooth" parameter for smooth movement
-  releventDiv.scrollIntoView({ behavior: 'smooth' })
+const targetElement = {
+  offsetTop: 100,
+}
+const scrollToElement = (id) => {
+  const targetElement = document.getElementById(id)
+
+  if (targetElement) {
+    // Calculate the additional pixels from the top
+    const additionalPixels = 72
+
+    // Calculate the target scroll position
+    const scrollPosition = targetElement.offsetTop - additionalPixels
+
+    // Scroll to the target element with smooth behavior
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: 'smooth',
+    })
+  }
 }
 
 const LandingPage = () => {
@@ -19,15 +33,15 @@ const LandingPage = () => {
   useEffect(() => {
     if (currentPath === '/') {
       console.log('we are at home')
-      jumpToReleventDiv('home')
+      scrollToElement('home')
     }
     if (currentPath === '/about') {
       console.log('we are at About')
-      jumpToReleventDiv('about')
+      scrollToElement('about')
     }
     if (currentPath === '/library') {
       console.log('we are at library')
-      jumpToReleventDiv('library')
+      scrollToElement('library')
     }
   }, [currentPath])
 

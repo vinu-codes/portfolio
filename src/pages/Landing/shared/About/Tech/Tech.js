@@ -70,9 +70,9 @@ const TechContainer = styled.div`
   border-left: 3px solid ${colors.lightPurple};
   height: 100%;
   transition: all 0.3s ease-in-out;
-  display: none;
   box-shadow: -3px 0px 9px 0px rgba(0, 0, 0, 0.16);
   background: white;
+  display: none;
   ${media.md`
     display: block;
   `};
@@ -207,10 +207,10 @@ const Tech = () => {
       const lastStyle = { transform: `translateY(${0 + 100}%)` }
       return (
         <TechItem
-          style={index === items.length - 1 ? lastStyle : style}
+          // style={index === items.length - 1 ? lastStyle : style}
           color={item.color}
           key={index}
-          className={index === items.length - 1 ? 'last' : 'not-last'}
+          // className={index === items.length - 1 ? 'last' : 'not-last'}
         >
           <TechLogo name={item.name} />
           <span>{item.label}</span>
@@ -220,9 +220,9 @@ const Tech = () => {
     return (
       <TechGroup>
         {result}
-        <Button className="tech-button" onClick={handleClick}>
+        {/* <Button className="tech-button" onClick={handleClick}>
           <Icon name="CHEVRON" rotate={-180} fill="white" />
-        </Button>
+        </Button> */}
       </TechGroup>
     )
   }
