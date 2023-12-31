@@ -23,14 +23,16 @@ const MainContainer = styled.div`
   width: 100%;
   padding-bottom: 80px;
   ${media.md`
-    height: calc(100vh + 80px);
-    padding-bottom: 0px;
+    /* height: calc(100vh + 80px);
+    padding-bottom: 0px; */
+    height: calc(100vh - 90px);
+    min-height: 500px;
   `};
   .main.about {
     ${media.md`
-    position: relative;
+    /* position: relative;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); */
     `}
   }
 `

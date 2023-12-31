@@ -22,7 +22,7 @@ const Main = (props) => {
   }
 
   return (
-    <MainWrapper className={`main ${className}`} {...rest}>
+    <MainWrapper className={`main ${className ? className : ''}`} {...rest}>
       <Subtitle className="subtitle">
         <h3 className="subtitle">{subtitle}</h3>
       </Subtitle>

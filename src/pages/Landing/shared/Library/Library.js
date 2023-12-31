@@ -7,6 +7,24 @@ import { Provider as AccordionContainer } from '@common/Accordion'
 import { Main } from '@common/Main'
 import { Modal } from '@common/Modal'
 import { Hero } from '@components/Hero'
+import { Slider } from '@common/Slider'
+import { Grid, Row, Col } from '@common/Grid'
+import styled from 'styled-components'
+import { media } from '@common/Theme'
+
+const Container = styled.div`
+  .main.library {
+    ${media.md`
+      height: auto;
+    `}
+  }
+`
+const SliderContainer = styled.div`
+  width: 100%;
+  min-width: 500px;
+  display: flex;
+  justify-content: center;
+`
 
 const Library = () => {
   const [state, setState] = useState({
@@ -25,16 +43,22 @@ const Library = () => {
   }
 
   return (
-    <Hero id="library">
-      <Main pt={100} title="My library" subtitle="Component Library"></Main>
-      {/* <Dropdown
+    <Container>
+      <Hero id="library">
+        <Main
+          pt={100}
+          title="My library"
+          className="library"
+          subtitle="Component Library"
+        ></Main>
+        {/* <Dropdown
         options={state.dropdown}
         name="dropdown"
         callback={({ name, value }) => {
           setState({ ...state, [name]: value })
         }}
       /> */}
-      {/* <Toggle
+        {/* <Toggle
         className="toggle"
         value={state.toggle}
         name="toggle"
@@ -45,10 +69,15 @@ const Library = () => {
           <p>this is inside accordionv2</p>
         </Accordion>
       </AccordionContainer> */}
-      {/* <Modal active={true} title="Modal">
+        {/* <Modal active={true} title="Modal">
         children
       </Modal> */}
-    </Hero>
+
+        <SliderContainer>
+          <Slider />
+        </SliderContainer>
+      </Hero>
+    </Container>
   )
 }
 

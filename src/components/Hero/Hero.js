@@ -19,7 +19,7 @@ const SectionContainer = styled.div`
 
   ${media.md`
     height: calc(100vh - 90px);
-    min-height: calc(100vh - 90px);
+    min-height: 500px;
   `};
 
   .main.intro {
