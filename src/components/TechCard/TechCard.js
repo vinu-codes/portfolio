@@ -6,10 +6,11 @@ const ListItem = styled.li`
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 33%;
   margin-top: 16px;
   margin-left: 0;
   display: flex;
+  max-width: 90px;
+  width: 100%;
   justify-content: center;
 `
 
@@ -46,19 +47,17 @@ const Text = styled.div`
     padding-bottom: 8px;
   }
 `
-const TechCard = ({ label, name }) => {
-  return (
-    <ListItem>
-      <Card>
-        <Image>
-          <TechLogo name={name} />
-        </Image>
-        <Text>
-          <span>{label}</span>
-        </Text>
-      </Card>
-    </ListItem>
-  )
-}
+const TechCard = ({ label, name }) => (
+  <ListItem>
+    <Card>
+      <Image>
+        <TechLogo name={name} />
+      </Image>
+      <Text>
+        <span>{label}</span>
+      </Text>
+    </Card>
+  </ListItem>
+)
 
 export { TechCard }

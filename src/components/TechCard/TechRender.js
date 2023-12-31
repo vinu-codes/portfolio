@@ -7,11 +7,14 @@ const TechGroup = styled.ul`
   padding: 0;
   list-style: none;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 900px;
+  gap: 20px;
+  padding-left: 20px;
+  max-width: 450px;
+  padding-right: 20px;
 `
 
 const technologiesCard = [
@@ -25,9 +28,9 @@ const technologiesCard = [
 
 const TechRender = () => (
   <TechGroup>
-    {technologiesCard.map((tech) => {
-      return <TechCard key={tech.label} label={tech.label} name={tech.name} />
-    })}
+    {technologiesCard.map((tech) => (
+      <TechCard key={tech.label} label={tech.label} name={tech.name} />
+    ))}
   </TechGroup>
 )
 

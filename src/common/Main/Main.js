@@ -16,6 +16,7 @@ const Main = (props) => {
   const { hasTypeWriter = false } = config
 
   const infoRender = () => {
+    if (!info || !info.length) return null
     return info.map((info, index) => {
       return <p key={index}>{info}</p>
     })
@@ -36,7 +37,9 @@ const Main = (props) => {
           <h2 className="title">{title}</h2>
         </Title>
       )}
-      {info && <Info className="info">{infoRender()}</Info>}
+      {!!info && info.length > 0 && (
+        <Info className="info">{infoRender()}</Info>
+      )}
       {children}
     </MainWrapper>
   )

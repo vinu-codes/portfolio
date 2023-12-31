@@ -13,9 +13,7 @@ const aboutMeInfo = [
     JavaScript, React, and Styled Components. My main goal is to build top-class
     web applications and websites.`,
 
-  `Aside from coding, you'll often find me: 
-    - Lifting Weights: I enjoy the challenge and discipline of weightlifting, both for physical health and mental well-being.
-    - Hiking: Exploring the great outdoors and connecting with nature is one of my favorite ways to unwind.`,
+  `Aside from coding, you'll often find me lifting weights as I enjoy the challenge and discipline of weightlifting, both for physical health and mental well-being, exploring the great outdoors and connecting with nature to unwind.`,
 ]
 
 const MainContainer = styled.div`
