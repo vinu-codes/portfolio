@@ -4,7 +4,6 @@ import { media } from '@common/Theme'
 import image from './assets/bg.svg'
 
 const SectionContainer = styled.div`
-  color: #fff;
   background: linear-gradient(
       to right,
       rgba(245, 245, 245, 0.8),

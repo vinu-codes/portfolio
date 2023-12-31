@@ -36,7 +36,6 @@ const IconContainer = styled.div`
 const Header = styled.div`
   width: 100%;
   cursor: pointer;
-  height: 25px;
   border: 2px solid #0148dd;
   padding: 25px;
   display: flex;
@@ -75,7 +74,7 @@ const Header = styled.div`
 const Group = styled.ul`
   position: absolute;
   z-index: 999;
-  top: 100%;
+  top: 54px;
   left: 0;
   list-style: none;
   background: white;

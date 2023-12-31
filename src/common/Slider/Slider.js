@@ -17,6 +17,24 @@ const Slider = ({ items }) => {
     setImageIndex(index)
   }
 
+  const handlePrev = () => {
+    if (!items || !items.length) return null
+    if (imageIndex === 0) {
+      setImageIndex(items.length - 1)
+    } else {
+      setImageIndex(imageIndex - 1)
+    }
+  }
+
+  const handleNext = () => {
+    if (!items || !items.length) return null
+    if (imageIndex === items.length - 1) {
+      setImageIndex(0)
+    } else {
+      setImageIndex(imageIndex + 1)
+    }
+  }
+
   const renderCircles = () => {
     if (!items || !items.length) return null
     const result = items.map((item, index) => (
@@ -29,41 +47,26 @@ const Slider = ({ items }) => {
     return result
   }
 
-  const renderImages = () => {
+  const renderItems = () => {
     const result = items.map((item) => {
       return (
-        <div
+        <li
+          className="slider-box-item"
           key={item.id}
-          src={item.url}
-          style={{ transform: `translateX(${-100 * imageIndex}%)` }}
+          style={{
+            transform: `translateX(${-100 * imageIndex}%)`,
+          }}
         >
           {item.value}
-        </div>
+        </li>
       )
     })
     return result
   }
 
-  const handlePrev = () => {
-    if (!items || !items.length) return null
-    if (imageIndex === 0) {
-      setImageIndex(items.length - 1)
-    } else {
-      setImageIndex(imageIndex - 1)
-    }
-  }
-  const handleNext = () => {
-    if (!items || !items.length) return null
-    if (imageIndex === items.length - 1) {
-      setImageIndex(0)
-    } else {
-      setImageIndex(imageIndex + 1)
-    }
-  }
-
   return (
-    <SliderContainer>
-      <SliderBox>{renderImages()}</SliderBox>
+    <SliderContainer className="slider">
+      <SliderBox className="slider-box">{renderItems()}</SliderBox>
       <button onClick={handlePrev} className="prev-button">
         <IconContainer className="left">
           <Icon name="CHEVRON" />

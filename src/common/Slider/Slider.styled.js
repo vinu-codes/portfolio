@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components'
 
 const SliderContainer = styled.div`
-  max-width: 500px;
-  max-height: 300px;
+  width: 100%;
+  min-width: 400px;
+  max-width: 400px;
   height: 300px;
+  max-height: 300px;
   position: relative;
-  background: red;
   button {
     position: absolute;
     width: 30px;
@@ -28,12 +29,15 @@ const SliderContainer = styled.div`
     }
   }
 `
-const SliderBox = styled.div`
+const SliderBox = styled.ul`
   width: 100%;
   height: 100%;
   overflow: hidden;
   display: flex;
-  img {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  .slider-box-item {
     width: 100%;
     transition: all 0.4s ease-in-out;
     height: 300px;
@@ -89,4 +93,5 @@ const Circle = styled.li`
       background: white;
     `}
 `
+
 export { SliderContainer, SliderBox, IconContainer, CircleGroup, Circle }

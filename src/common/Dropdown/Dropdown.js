@@ -10,8 +10,8 @@ const keyCodes = {
 const Dropdown = ({ options, callback, name, ...props }) => {
   const ref = useRef(null)
   const iRuffu = useRef([])
+  const elementRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
-  const [index, setActiveIndex] = useState(0)
 
   const escFunction = useCallback((event) => {
     if (event.key === 'Escape') {
@@ -93,7 +93,16 @@ const Dropdown = ({ options, callback, name, ...props }) => {
       </List>
     ))
 
-    return <Group isActive={isOpen}>{result}</Group>
+    return (
+      <Group
+        style={{
+          top: elementRef.current ? elementRef.current.offsetHeight : '54px',
+        }}
+        isActive={isOpen}
+      >
+        {result}
+      </Group>
+    )
   }
 
   const total = totalSelected(options)
@@ -101,7 +110,11 @@ const Dropdown = ({ options, callback, name, ...props }) => {
   if (!options || !options.length) return null
   return (
     <Wrapper ref={ref} mt={props.mt} tabIndex={0} onKeyDown={onKeyDown}>
-      <Header isActive={isOpen} onClick={() => setIsOpen(!isOpen)}>
+      <Header
+        ref={elementRef}
+        isActive={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <span>{total > 0 ? `Selected: ${total}` : 'Select'}</span>
         <IconContainer className="IconContainer">
           <Icon name="CHEVRON" />
