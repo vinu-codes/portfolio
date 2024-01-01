@@ -38,7 +38,7 @@ const AnchorExternal = styled.a`
   ${mbFn};
 `
 
-const Link = ({ to, external = false, children, mb }) => {
+const Link = ({ to, external = false, children, mb, ...props }) => {
   const [currentPath, navigate] = useContext(NavigationContext)
 
   const handleClick = (event) => {
@@ -56,11 +56,12 @@ const Link = ({ to, external = false, children, mb }) => {
       mb={16}
       href={to}
       onClick={handleClick}
+      {...props}
     >
       {children}
     </Anchor>
   ) : (
-    <AnchorExternal mb={mb} href={to}>
+    <AnchorExternal mb={mb} href={to} {...props}>
       {children}
     </AnchorExternal>
   )

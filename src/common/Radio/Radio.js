@@ -9,6 +9,7 @@ const Radio = ({ options, value, callback, label, name }) => {
     const result = options.map((option) => {
       return (
         <List
+          key={option.label}
           className={option.label === value ? 'active' : ''}
           onClick={() => callback({ name: name, data: option.label })}
         >

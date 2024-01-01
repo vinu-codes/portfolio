@@ -25,6 +25,7 @@ const MobileTitle = styled.h2`
   color: ${colors.navyBlue};
   margin-left: calc(48px + 16px);
   display: block;
+
   .active & {
     display: none;
   }
@@ -52,6 +53,16 @@ const Container = styled.div`
   top: 0;
   left: 0;
   transition: all 0.1s ease-in-out;
+
+  ${(props) =>
+    props.isScrolled &&
+    css`
+      top: -80px;
+      ${media.md`
+        top: 0px;
+      `};
+    `};
+
   ${media.md`
     padding-left: 24px;
     padding-right: 24px;

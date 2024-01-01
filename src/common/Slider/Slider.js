@@ -54,7 +54,7 @@ const Slider = ({ items }) => {
       return (
         <li
           className="slider-box-item"
-          key={item.id}
+          key={item.label}
           style={{
             transform: `translateX(${-100 * imageIndex}%)`,
           }}

@@ -71,7 +71,6 @@ const radioOptions = [
   { label: 'Option 1', value: 'A', id: 'A' },
   { label: 'Option 2', value: 'B', id: 'B' },
   { label: 'Option 3', value: 'C', id: 'C' },
-  { label: 'Option 4', value: 'D', id: 'D' },
 ]
 
 const Library = () => {
@@ -117,7 +116,16 @@ const Library = () => {
   )
 
   const accordionExample = (
-    <Detail title="Accordion">
+    <Detail
+      title="Accordion"
+      items={[
+        {
+          label:
+            'Build this accordion component provide a way to expand content.',
+        },
+      ]}
+      link="https://github.com/vinu-codes/portfolio/blob/main/src/common/Accordion/Accordion.js"
+    >
       <AccordionContainer>
         <Accordion name="accordion" title="title 2">
           <p>this is inside accordionv2</p>
@@ -127,7 +135,16 @@ const Library = () => {
   )
 
   const toggleComponent = (
-    <Detail title="Toggle">
+    <Detail
+      title="Toggle"
+      items={[
+        {
+          label:
+            'Build this component in order  to toggle the light and dark theme.',
+        },
+      ]}
+      link="https://github.com/vinu-codes/portfolio/blob/main/src/common/Toggle/Toggle.js"
+    >
       <Toggle
         className="toggle"
         label="Enable light theme"
@@ -139,7 +156,16 @@ const Library = () => {
   )
 
   const dropdownComponent = (
-    <Detail title="Dropdown">
+    <Detail
+      title="Dropdown"
+      link="https://github.com/vinu-codes/portfolio/blob/main/src/common/Dropdown/Dropdown.js"
+      items={[
+        {
+          label:
+            'Build the Dropdown component as a much needed reusable component.',
+        },
+      ]}
+    >
       <Dropdown
         options={state.dropdown}
         name="dropdown"

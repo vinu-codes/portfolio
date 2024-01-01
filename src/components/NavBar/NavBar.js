@@ -23,6 +23,25 @@ const NavBar = ({ routes = [] }) => {
   const [currentPath, navigate] = useContext(NavigationContext)
   const [isActive, setIsActive] = useState(false)
   const { width } = useSize()
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+
+      if (scrollPosition > 80) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   useEffect(() => {
     if (!!width && width >= 768) {
@@ -101,7 +120,10 @@ const NavBar = ({ routes = [] }) => {
         width: '100%',
       }}
     >
-      <Container className={isActive ? 'active' : 'not_active'}>
+      <Container
+        isScrolled={isScrolled}
+        className={isActive ? 'active' : 'not_active'}
+      >
         <Image onClick={handleProfileClick}>
           <img alt="profile" src={profile} />
         </Image>

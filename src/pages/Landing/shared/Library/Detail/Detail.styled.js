@@ -40,13 +40,10 @@ const Panel = styled.div`
   &:not(:only-child) {
     width: 100%;
     ${media.md`
-    width: 50%;
-  `};
+     width: 50%;
+    `};
   }
-  ${media.md`
-    width: 100%;
-  `};
-  &.detail {
+  &.detail-panel {
     width: 50%;
     flex-direction: column;
     display: none;
@@ -77,10 +74,15 @@ const Panel = styled.div`
       color: rgb(47 47 47);
     }
   }
-  button {
+  button.detail-button {
+    border-radius: 8px;
     flex-shrink: 0;
     margin-top: 16px;
     max-width: 200px;
+    a.detail-link {
+      padding: 0;
+      width: 100%;
+    }
   }
 `
 export { DottedBox, DetailContainer, Panel }

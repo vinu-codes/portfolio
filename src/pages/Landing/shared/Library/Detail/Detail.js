@@ -22,13 +22,18 @@ const Detail = ({ items, title, link, children }) => {
         </Panel>
       )}
       {!!items && !!title && (
-        <Panel className="detail">
+        <Panel className="detail-panel">
           {title && <h2 className="detail-title">{title}</h2>}
           {renderItems()}
           {link && (
-            <Button>
-              <Link external={true} to="https://github.com/vinu-codes">
-                <span>View in Github</span>
+            <Button className="detail-button">
+              <Link
+                className="detail-link"
+                target="_blank"
+                external={true}
+                to={link}
+              >
+                <span>View in GitHub</span>
               </Link>
             </Button>
           )}
