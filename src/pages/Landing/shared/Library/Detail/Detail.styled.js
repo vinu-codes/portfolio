@@ -1,7 +1,4 @@
-import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
-import { Button } from '@common/Button'
-import { Link } from '@components/Route'
 import { media } from '@common/Theme'
 
 const slideIn = keyframes`
@@ -86,40 +83,4 @@ const Panel = styled.div`
     max-width: 200px;
   }
 `
-
-const Detail = ({ items, title, link, children }) => {
-  const renderItems = () => {
-    if (!items || !items.length) return null
-    const result = items.map((item, index) => (
-      <li className="detail-item" key={index}>
-        <span>{item.label}</span>
-      </li>
-    ))
-    return <ul className="detail-group">{result}</ul>
-  }
-
-  return (
-    <DetailContainer>
-      {children && (
-        <Panel>
-          <DottedBox>{children}</DottedBox>
-        </Panel>
-      )}
-      {!!items && !!title && (
-        <Panel className="detail">
-          {title && <h2 className="detail-title">{title}</h2>}
-          {renderItems()}
-          {link && (
-            <Button>
-              <Link external={true} to="https://github.com/vinu-codes">
-                <span>View in Github</span>
-              </Link>
-            </Button>
-          )}
-        </Panel>
-      )}
-    </DetailContainer>
-  )
-}
-
-export { Detail }
+export { DottedBox, DetailContainer, Panel }

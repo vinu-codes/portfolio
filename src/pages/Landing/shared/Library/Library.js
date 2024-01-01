@@ -10,7 +10,7 @@ import { Slider } from '@common/Slider'
 import { Radio } from '@common/Radio'
 import styled, { keyframes } from 'styled-components'
 import { colors, media } from '@common/Theme'
-import { Detail } from '@common/Detail'
+import { Detail } from '@pages/Landing/shared/Library/Detail'
 
 const Container = styled.div`
   .main.library {
@@ -117,7 +117,7 @@ const Library = () => {
   )
 
   const accordionExample = (
-    <Detail>
+    <Detail title="Accordion">
       <AccordionContainer>
         <Accordion name="accordion" title="title 2">
           <p>this is inside accordionv2</p>
@@ -127,7 +127,7 @@ const Library = () => {
   )
 
   const toggleComponent = (
-    <Detail>
+    <Detail title="Toggle">
       <Toggle
         className="toggle"
         label="Enable light theme"
@@ -139,7 +139,7 @@ const Library = () => {
   )
 
   const dropdownComponent = (
-    <Detail>
+    <Detail title="Dropdown">
       <Dropdown
         options={state.dropdown}
         name="dropdown"
