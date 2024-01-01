@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
-import { media } from '@common/Theme'
+import { font, media } from '@common/Theme'
 
 const slideIn = keyframes`
 0% {
@@ -67,10 +67,11 @@ const Panel = styled.div`
   li.detail-item {
     list-style: none;
     animation-name: ${slideIn};
-    margin: 0px 0px 8px;
+    margin: 0px 0px 12px;
     span {
       font-size: 14px;
       line-height: 21px;
+      font-weight: ${font.thin};
       color: rgb(47 47 47);
     }
   }

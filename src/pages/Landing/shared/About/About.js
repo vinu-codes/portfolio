@@ -39,7 +39,7 @@ const About = () => (
     <Main
       className="about"
       subtitle="A bit about me..."
-      title="About me"
+      title="Just me"
       info={aboutMeInfo}
       config={{ hasTypeWriter: false }}
     />

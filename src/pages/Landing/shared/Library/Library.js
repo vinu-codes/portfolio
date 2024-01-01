@@ -11,6 +11,7 @@ import { Radio } from '@common/Radio'
 import styled, { keyframes } from 'styled-components'
 import { colors, media } from '@common/Theme'
 import { Detail } from '@pages/Landing/shared/Library/Detail'
+import { Parallax } from '@components/Parallax'
 
 const Container = styled.div`
   .main.library {
@@ -121,7 +122,11 @@ const Library = () => {
       items={[
         {
           label:
-            'Build this accordion component provide a way to expand content.',
+            'This accordion component not only enriches the end-user experience by providing an intuitive and space-efficient interface but also elevates the developer experience through its reusable, customizable, and well-documented design. Its adoption can significantly expedite the development of interactive and collapsible sections within React applications.',
+        },
+        {
+          label:
+            'Developers can integrate the accordion effortlessly into their projects by importing the component and configuring it through props. The simplicity of the API contributes to a smooth onboarding process for new developers.',
         },
       ]}
       link="https://github.com/vinu-codes/portfolio/blob/main/src/common/Accordion/Accordion.js"
@@ -162,7 +167,7 @@ const Library = () => {
       items={[
         {
           label:
-            'Build the Dropdown component as a much needed reusable component.',
+            'This Dropdown component was developed from scratch, starting out with a basic sketch. It is a fully comprehensive reusable component.',
         },
       ]}
     >
@@ -181,7 +186,7 @@ const Library = () => {
       <Hero>
         <Main
           pt={100}
-          title="My library"
+          title="Library"
           className="library"
           subtitle="Component Library"
         ></Main>

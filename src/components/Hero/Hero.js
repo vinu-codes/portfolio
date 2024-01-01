@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { media } from '@common/Theme'
 import image from './assets/bg.svg'
+import { Parallax } from '@components/Parallax'
 
 const SectionContainer = styled.div`
   background: linear-gradient(

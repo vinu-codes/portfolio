@@ -43,6 +43,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 16px;
@@ -68,6 +69,7 @@ const Container = styled.div`
     padding-right: 24px;
 `};
   &.active {
+    align-items: flex-start;
     height: 100vh;
     min-height: 100vh;
     max-height: 100vh;
@@ -82,10 +84,9 @@ const Container = styled.div`
 `
 const MobileMenu = styled.div`
   width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  background: none;
+  position: relative;
+  top: 200px;
+  background: white;
   ${media.md`
     display: none;
   `};
@@ -119,9 +120,14 @@ const MobileItem = styled.li`
   justify-content: center;
   cursor: pointer;
   span {
-    &:hover {
+    font-size: 18px;
+    font-weight: ${font.regular};
+    color: ${colors.navyBlue};
+  }
+  &:hover {
+    span {
       color: #6a6cff;
-      font-weight: 700;
+      font-weight: ${font.bold};
     }
   }
 `
