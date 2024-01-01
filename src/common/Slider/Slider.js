@@ -6,6 +6,8 @@ import {
   IconContainer,
   CircleGroup,
   Circle,
+  SliderNavigation,
+  SliderControl,
 } from './Slider.styled'
 
 const items = [{ value: <div>hi</div>, label: 'div-hi' }]
@@ -67,17 +69,22 @@ const Slider = ({ items }) => {
   return (
     <SliderContainer className="slider">
       <SliderBox className="slider-box">{renderItems()}</SliderBox>
-      <button onClick={handlePrev} className="prev-button">
-        <IconContainer className="left">
-          <Icon name="CHEVRON" fill={'white'} size={32} />
-        </IconContainer>
-      </button>
-      <button onClick={handleNext} className="next-button">
-        <IconContainer className="right">
-          <Icon name="CHEVRON" size={32} />
-        </IconContainer>
-      </button>
-      <CircleGroup>{renderCircles()}</CircleGroup>
+
+      <SliderControl>
+        <button onClick={handlePrev} className="prev-button">
+          <IconContainer className="left">
+            <Icon name="CHEVRON" fill={'white'} size={32} />
+          </IconContainer>
+        </button>
+        <button onClick={handleNext} className="next-button">
+          <IconContainer className="right">
+            <Icon name="CHEVRON" size={32} />
+          </IconContainer>
+        </button>
+        <SliderNavigation>
+          <CircleGroup>{renderCircles()}</CircleGroup>
+        </SliderNavigation>
+      </SliderControl>
     </SliderContainer>
   )
 }

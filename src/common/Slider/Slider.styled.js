@@ -8,40 +8,6 @@ const SliderContainer = styled.div`
   height: 300px;
   max-height: 300px;
   position: relative;
-  button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
-    border: none;
-    border-radius: 10px;
-    border: 2px solid ${colors.lightPurple};
-    background: ${colors.lightPurple};
-    &:hover {
-      background: ${colors.lightPurple};
-    }
-    svg.ICON {
-      path {
-        fill: white;
-      }
-    }
-    &:focus {
-      outline: none;
-    }
-    &:nth-child(2) {
-      left: 10px;
-      bottom: 0;
-    }
-    &:nth-child(3) {
-      right: 10px;
-      bottom: 0;
-    }
-
-    &:hover {
-      background: rgba(0, 0, 0, 0.2);
-    }
-  }
 `
 const SliderBox = styled.ul`
   width: 100%;
@@ -61,6 +27,9 @@ const SliderBox = styled.ul`
 `
 
 const IconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   svg {
     g {
       path {
@@ -76,16 +45,22 @@ const IconContainer = styled.div`
   }
 `
 
+const SliderNavigation = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  align-items: center;
+`
+
 const CircleGroup = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  position: absolute;
   display: flex;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
 `
 
 const Circle = styled.li`
@@ -93,19 +68,74 @@ const Circle = styled.li`
   cursor: pointer;
   padding: 0;
   margin: 0;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   margin-left: 8px;
-  border: 2px solid white;
+  border: 2px solid ${colors.lightPurple};
   &:nth-child(1) {
     margin-left: 0;
   }
   ${(props) =>
     props.isActive &&
     css`
-      background: white;
+      background: ${colors.lightPurple};
     `}
 `
 
-export { SliderContainer, SliderBox, IconContainer, CircleGroup, Circle }
+const SliderControl = styled.div`
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+  z-index: 1;
+  button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 2px solid ${colors.lightPurple};
+    background: ${colors.lightPurple};
+    &:hover {
+      background: ${colors.lightPurple};
+    }
+    svg.ICON {
+      path {
+        fill: white;
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      svg.ICON {
+        path {
+          fill: ${colors.lightPurple};
+        }
+      }
+      background: ${colors.white};
+    }
+  }
+`
+
+export {
+  SliderContainer,
+  SliderBox,
+  IconContainer,
+  CircleGroup,
+  Circle,
+  SliderControl,
+  SliderNavigation,
+}

@@ -39,12 +39,13 @@ const SliderWrapper = styled.div`
   justify-content: center;
   .slider {
     background: white;
-    border-radius: 8px;
-    overflow: hidden;
+    border-radius: 8px 8px 0 0;
     transition: all 0.3s ease-in-out;
     ul.slider-box {
       li.slider-box-item {
-        padding-top: 38px;
+        padding-top: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
         display: flex;
         height: 100%;
         justify-content: center;
@@ -88,21 +89,22 @@ const Library = () => {
       { label: 'Thor', id: 1, active: false },
       { label: 'Captain America', id: 2, active: false },
       { label: 'Iron Man', id: 3, active: false },
-      { label: 'Extra Item', id: 4, active: false },
-      { label: 'Extra sdfsdf', id: 5, active: false },
     ],
     radio: '',
   })
 
   const radioComponent = (
-    <Radio
-      name="radio"
-      options={radioOptions}
-      value={state.radio}
-      callback={({ name, data }) => {
-        setState({ ...state, [name]: data })
-      }}
-    />
+    <div style={{ maxWidth: '300px', paddingTop: '20px' }}>
+      <Radio
+        name="radio"
+        label="Pick an option"
+        options={radioOptions}
+        value={state.radio}
+        callback={({ name, data }) => {
+          setState({ ...state, [name]: data })
+        }}
+      />
+    </div>
   )
 
   const handleToggleCallback = (data) => {

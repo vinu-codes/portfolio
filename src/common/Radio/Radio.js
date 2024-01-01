@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
-import { Group, List, Heading } from './Radio.styled'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Group, List, Label, Container, Dot } from './Radio.styled'
 
-const Radio = ({ options, value, callback, name }) => {
+const Radio = ({ options, value, callback, label, name }) => {
   const renderOptions = () => {
     if (!options || !options.length) return null
 
     const result = options.map((option) => {
       return (
         <List
-          isActive={option.label === value}
+          className={option.label === value ? 'active' : ''}
           onClick={() => callback({ name: name, data: option.label })}
         >
-          <span> {option.label}</span>
+          <Dot />
+          <span className="label">{option.label}</span>
         </List>
       )
     })
@@ -19,13 +21,19 @@ const Radio = ({ options, value, callback, name }) => {
   }
 
   return (
-    <>
-      <Heading>
-        <span>Pick an option:</span>
-      </Heading>
+    <Container>
+      {label && (
+        <Label>
+          <h4>{label}</h4>
+        </Label>
+      )}
       {renderOptions()}
-    </>
+    </Container>
   )
+}
+
+Radio.propTypes = {
+  label: PropTypes.string,
 }
 
 export { Radio }
