@@ -14,6 +14,8 @@ import {
   MobileGroup,
   MobileItem,
   DesktopTitle,
+  MobileTitle,
+  MobileImage,
 } from './NavBar.styled'
 import profile from './assets/profile.png'
 
@@ -111,6 +113,10 @@ const NavBar = ({ routes = [] }) => {
           </button>
         </Group>
         <MobileMenu className="mobile-menu">{renderMobileItems()}</MobileMenu>
+        <MobileImage onClick={handleProfileClick}>
+          <img alt="profile" src={profile} />
+        </MobileImage>
+        <MobileTitle>vinu-codes</MobileTitle>
         <MobileButton onClick={toggleMenu}>
           <IconContainer>
             <Icon

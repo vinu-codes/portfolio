@@ -15,6 +15,24 @@ const DesktopTitle = styled.h2`
   `};
 `
 
+const MobileTitle = styled.h2`
+  position: absolute;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: ${colors.navyBlue};
+  margin-left: calc(48px + 16px);
+  display: block;
+  .active & {
+    display: none;
+  }
+  ${media.md`
+    display: none;
+  `};
+`
+
 const Container = styled.div`
   position: fixed;
   width: 100%;
@@ -57,7 +75,6 @@ const MobileMenu = styled.div`
   align-items: flex-start;
   justify-content: center;
   background: none;
-  margin-top: 72px;
   ${media.md`
     display: none;
   `};
@@ -218,6 +235,29 @@ const Image = styled.div`
   `};
 `
 
+const MobileImage = styled.div`
+  border-radius: 50%;
+  overflow: hidden;
+  background: grey;
+  height: 48px;
+  width: 48px;
+  display: none;
+  cursor: pointer;
+  border: 2px solid ${colors.navyBlue};
+  display: block;
+  .active & {
+    display: none;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  ${media.md`
+    display: none;
+  `};
+`
+
 export {
   Container,
   Image,
@@ -229,4 +269,6 @@ export {
   MobileGroup,
   DesktopTitle,
   MobileItem,
+  MobileTitle,
+  MobileImage,
 }

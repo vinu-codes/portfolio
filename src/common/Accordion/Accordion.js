@@ -4,9 +4,11 @@ import {
   AccordionHeader,
   AccordionExpander,
   AccordionContent,
+  IconContainer,
 } from './Accordion.styled'
 import { Context } from './Provider'
 import { useContext } from 'react'
+import { Icon } from '@common/Icon'
 import { getActiveItem, checkForNameOnArray } from './utils'
 
 const updateArrayByName = (state, name) => {
@@ -36,11 +38,14 @@ const Accordion = ({ title, name, children }) => {
   const isActive = getActiveItem(state, name)
 
   return (
-    <AccordionContainer>
+    <AccordionContainer className={isActive ? 'active' : ''}>
       <AccordionHeader onClick={() => handleSelect(name)}>
         {title && <span>{title}</span>}
+        <IconContainer mr={8}>
+          <Icon name="CHEVRON" rotate={isActive ? 180 : 0} />
+        </IconContainer>
       </AccordionHeader>
-      <AccordionExpander isActive={isActive}>
+      <AccordionExpander>
         <AccordionContent>{children}</AccordionContent>
       </AccordionExpander>
     </AccordionContainer>
