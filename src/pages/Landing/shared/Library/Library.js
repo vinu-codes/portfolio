@@ -8,6 +8,7 @@ import { Main } from '@common/Main'
 import { Modal } from '@common/Modal'
 import { Hero } from '@components/Hero'
 import { Slider } from '@common/Slider'
+import { Radio } from '@common/Radio'
 import { Grid, Row, Col } from '@common/Grid'
 import styled from 'styled-components'
 import { media } from '@common/Theme'
@@ -63,6 +64,12 @@ const SliderWrapper = styled.div`
     `}
   }
 `
+const radioOptions = [
+  { label: 'Option 1', value: 'A', id: 'A' },
+  { label: 'Option 2', value: 'B', id: 'B' },
+  { label: 'Option 3', value: 'C', id: 'C' },
+  { label: 'Option 4', value: 'D', id: 'D' },
+]
 
 const accordionExample = (
   <div style={{ paddingLeft: '42px', paddingRight: '42px' }}>
@@ -84,7 +91,19 @@ const Library = () => {
       { label: 'Extra Item', id: 4, active: false },
       { label: 'Extra sdfsdf', id: 5, active: false },
     ],
+    radio: '',
   })
+
+  const radioComponent = (
+    <Radio
+      name="radio"
+      options={radioOptions}
+      value={state.radio}
+      callback={({ name, data }) => {
+        setState({ ...state, [name]: data })
+      }}
+    />
+  )
 
   const handleToggleCallback = (data) => {
     setState({ ...state, [data.name]: data.value })
@@ -126,6 +145,10 @@ const Library = () => {
                   />
                 ),
                 label: 'Toggle',
+              },
+              {
+                value: radioComponent,
+                label: 'Radio',
               },
             ]}
           />
