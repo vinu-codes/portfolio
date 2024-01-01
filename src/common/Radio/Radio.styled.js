@@ -23,9 +23,9 @@ const List = styled.li`
   padding: 0;
   list-style: none;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding: 16px 16px 16px 0px;
-  background: white;
+  background: transparent;
   margin-top: 4px;
   position: relative;
   cursor: pointer;
@@ -35,6 +35,15 @@ const List = styled.li`
     font-weight: 500;
     margin-left: 16px;
   }
+`
+
+const pseudoStyles = css`
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  border: 2px solid ${colors.lightPurple};
 `
 
 const Dot = styled.span`
@@ -47,26 +56,13 @@ const Dot = styled.span`
     }
   }
   &:before {
-    content: '';
-    position: absolute;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: #6b6cfe;
+    ${pseudoStyles};
+    background: transparent;
   }
   &:after {
-    content: '';
-    position: absolute;
-    background: white;
-    height: 8px;
-    width: 8px;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    ${pseudoStyles};
+    background: ${colors.lightPurple};
     display: none;
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.22);
-    transition: all 0.3s ease-in-out;
   }
 `
 

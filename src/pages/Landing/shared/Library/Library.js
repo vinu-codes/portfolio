@@ -5,11 +5,9 @@ import { Accordion } from '@common/Accordion'
 import { Section } from '@common/Section'
 import { Provider as AccordionContainer } from '@common/Accordion'
 import { Main } from '@common/Main'
-import { Modal } from '@common/Modal'
 import { Hero } from '@components/Hero'
 import { Slider } from '@common/Slider'
 import { Radio } from '@common/Radio'
-import { Grid, Row, Col } from '@common/Grid'
 import styled from 'styled-components'
 import { media } from '@common/Theme'
 
@@ -23,6 +21,18 @@ const Container = styled.div`
   .hero {
     min-height: 1100px;
   }
+`
+
+const DottedBox = styled.div`
+  border: 2px dashed #cccccc;
+  background: rgb(239 239 239);
+  padding: 24px;
+  display: flex;
+  max-width: 350px;
+  width: 100%;
+  justify-content: center;
+  border-radius: 8px;
+  align-items: flex-start;
 `
 
 const aspectRatio = 1.3333
@@ -43,7 +53,7 @@ const SliderWrapper = styled.div`
     transition: all 0.3s ease-in-out;
     ul.slider-box {
       li.slider-box-item {
-        padding-top: 16px;
+        padding-top: 32px;
         padding-left: 16px;
         padding-right: 16px;
         display: flex;
@@ -72,16 +82,6 @@ const radioOptions = [
   { label: 'Option 4', value: 'D', id: 'D' },
 ]
 
-const accordionExample = (
-  <div style={{ paddingLeft: '42px', paddingRight: '42px' }}>
-    <AccordionContainer>
-      <Accordion name="accordion" title="title 2">
-        <p>this is inside accordionv2</p>
-      </Accordion>
-    </AccordionContainer>
-  </div>
-)
-
 const Library = () => {
   const [state, setState] = useState({
     toggle: true,
@@ -93,8 +93,12 @@ const Library = () => {
     radio: '',
   })
 
+  const handleToggleCallback = (data) => {
+    setState({ ...state, [data.name]: data.value })
+  }
+
   const radioComponent = (
-    <div style={{ maxWidth: '300px', paddingTop: '20px' }}>
+    <DottedBox>
       <Radio
         name="radio"
         label="Pick an option"
@@ -104,12 +108,42 @@ const Library = () => {
           setState({ ...state, [name]: data })
         }}
       />
-    </div>
+    </DottedBox>
   )
 
-  const handleToggleCallback = (data) => {
-    setState({ ...state, [data.name]: data.value })
-  }
+  const accordionExample = (
+    <DottedBox>
+      <AccordionContainer>
+        <Accordion name="accordion" title="title 2">
+          <p>this is inside accordionv2</p>
+        </Accordion>
+      </AccordionContainer>
+    </DottedBox>
+  )
+
+  const toggleComponent = (
+    <DottedBox>
+      <Toggle
+        className="toggle"
+        label="Enable light theme"
+        value={state.toggle}
+        name="toggle"
+        callback={handleToggleCallback}
+      />
+    </DottedBox>
+  )
+
+  const dropdownComponent = (
+    <DottedBox>
+      <Dropdown
+        options={state.dropdown}
+        name="dropdown"
+        callback={({ name, value }) => {
+          setState({ ...state, [name]: value })
+        }}
+      />
+    </DottedBox>
+  )
 
   return (
     <Container id="library">
@@ -126,26 +160,11 @@ const Library = () => {
             items={[
               { value: accordionExample, label: 'Accordion' },
               {
-                value: (
-                  <Dropdown
-                    options={state.dropdown}
-                    name="dropdown"
-                    callback={({ name, value }) => {
-                      setState({ ...state, [name]: value })
-                    }}
-                  />
-                ),
+                value: dropdownComponent,
                 label: 'Dropdown',
               },
               {
-                value: (
-                  <Toggle
-                    className="toggle"
-                    value={state.toggle}
-                    name="toggle"
-                    callback={handleToggleCallback}
-                  />
-                ),
+                value: toggleComponent,
                 label: 'Toggle',
               },
               {

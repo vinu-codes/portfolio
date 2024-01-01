@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { mtFn, mrFn } from '@common/Theme'
+import { mtFn, mrFn, colors } from '@common/Theme'
 
 const Wrapper = styled.div`
   position: relative;
@@ -36,8 +36,9 @@ const IconContainer = styled.div`
 const Header = styled.div`
   width: 100%;
   cursor: pointer;
-  border: 2px solid #0148dd;
+  border: 2px solid transparent;
   padding: 25px;
+  background: ${colors.white};
   display: flex;
   align-items: center;
   user-select: none;
@@ -45,8 +46,11 @@ const Header = styled.div`
   transition: all 0.3s ease-in-out;
   border-radius: 4px;
   position: relative;
+  &:focus {
+    border: 2px solid ${colors.lightPurple};
+  }
   &:hover {
-    border: 2px solid #6583c3;
+    border: 2px solid ${colors.lightPurple};
   }
   .IconContainer {
     right: 12px;
@@ -58,7 +62,7 @@ const Header = styled.div`
     margin-left: auto;
     transition: transform 0.2s;
     path {
-      fill: #0148dd;
+      fill: ${colors.lightPurple};
     }
   }
   ${(props) =>
@@ -109,8 +113,8 @@ const List = styled.li`
   }
   svg.CHECKBOX_FILLED {
     rect {
-      fill: #0148dd;
-      stroke: #0148dd;
+      fill: ${colors.lightPurple};
+      stroke: ${colors.lightPurple};
     }
   }
 `

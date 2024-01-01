@@ -117,7 +117,7 @@ const Dropdown = ({ options, callback, name, ...props }) => {
       >
         <span>{total > 0 ? `Selected: ${total}` : 'Select'}</span>
         <IconContainer className="IconContainer">
-          <Icon name="CHEVRON" />
+          <Icon name="CHEVRON" size={24} />
         </IconContainer>
       </Header>
       {renderOptions()}
