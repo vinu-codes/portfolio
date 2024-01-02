@@ -182,7 +182,7 @@ const items = [
 ]
 
 const Tech = () => {
-  const [isExpanded, setExpanded] = useState(true)
+  const [isExpanded, setExpanded] = useState(false)
   const [imageIndex, setImageIndex] = useState(0)
 
   const handleExpand = () => {
@@ -225,9 +225,9 @@ const Tech = () => {
   }
 
   return (
-    <TechContainer isActive={isExpanded}>
-      <Blade onClick={handleExpand} isActive={isExpanded} />
-      <Header>
+    <TechContainer className="tech-container" isActive={isExpanded}>
+      <Blade className="blade" onClick={handleExpand} isActive={isExpanded} />
+      <Header className="header">
         <CloseButton onClick={handleExpand}>
           <Icon size={32} name="CLOSE" stroke={colors.lightPurple} />
         </CloseButton>
