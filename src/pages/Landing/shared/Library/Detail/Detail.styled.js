@@ -62,6 +62,7 @@ const Panel = styled.div`
     padding: 0;
     list-style: none;
     margin-top: 16px;
+    overflow-y: auto;
   }
 
   li.detail-item {
