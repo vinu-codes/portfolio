@@ -35,6 +35,8 @@ const Radio = ({ options, value, callback, label, name }) => {
 
 Radio.propTypes = {
   label: PropTypes.string,
+  value: PropTypes.string,
+  options: PropTypes.array,
 }
 
 export { Radio }

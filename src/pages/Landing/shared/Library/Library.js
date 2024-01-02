@@ -102,6 +102,10 @@ const Library = () => {
           label:
             'This is a reusable component, designed from the ground - up, I intentionally hand coded each line',
         },
+        {
+          label:
+            'The component supports conditional rendering of a label, providing additional context or information when needed. This feature ensures flexibility in conveying information alongside the radio options.',
+        },
       ]}
     >
       <Radio
@@ -122,7 +126,7 @@ const Library = () => {
       items={[
         {
           label:
-            'This accordion component not only enriches the end-user experience by providing an intuitive and space-efficient interface but also elevates the developer experience through its reusable, customizable, and well-documented design. Its adoption can significantly expedite the development of interactive and collapsible sections within React applications.',
+            'This accordion component provides an intuitive and space-efficient interface whilst elevating the developers experience through its reusable, customizable, and well-documented design. Its adoption can significantly expedite the development of interactive and collapsible sections within React applications.',
         },
         {
           label:
@@ -145,14 +149,22 @@ const Library = () => {
       items={[
         {
           label:
-            'Build this component in order  to toggle the light and dark theme.',
+            'This toggle component is reusable and can be integrated into different parts of the application, providing a consistent user interface for controlling binary options. ',
+        },
+        {
+          label:
+            'The core of this toggle component is an input element with the type attribute set to checkbox. This choice enables straightforward state manangement allowing the component to toggle between its "on" and "off" states.',
+        },
+        {
+          label:
+            'The component is equipped with a callback functionality that allows the parent component to manage the state, that gets invoked upon a state change. This function enables seamless integration with other parts of the application, allowing the toggle component to only focus on rendering and styling based on the provided props.',
         },
       ]}
       link="https://github.com/vinu-codes/portfolio/blob/main/src/common/Toggle/Toggle.js"
     >
       <Toggle
         className="toggle"
-        label="Enable light theme"
+        label="Enable"
         value={state.toggle}
         name="toggle"
         callback={handleToggleCallback}
@@ -168,6 +180,22 @@ const Library = () => {
         {
           label:
             'This Dropdown component was developed from scratch, starting out with a basic sketch. It is a fully comprehensive reusable component.',
+        },
+        {
+          label:
+            'It supports a dynamic list of options, allowing users to choose from a set of predefined values.',
+        },
+        {
+          label:
+            'It is highly customizable, enabling developers to modify the appearance, styling, and behavior of the dropdown to suit the specific requirements of their project.',
+        },
+        {
+          label:
+            'The component adheres to accessibility standards, ensuring that users with disabilities can interact with it using assistive technologies. Key considerations have been taken into account to facilitate interaction with assistive technologies. These considerations include: tabIndex: The tabIndex attribute has been strategically set to allow users to navigate through interactive elements on the page using the keyboard. ',
+        },
+        {
+          label:
+            'The component is designed to be responsive, providing an optimal user experience across various screen sizes and devices. The dropdown supports keyboard navigation for enhanced usability. Users can use arrow keys to navigate through the list of options, press Enter to select an option, and Esc to close the dropdown.',
         },
       ]}
     >
