@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Icon } from '@common/Icon'
 import { useSize } from '@hooks/useSize'
 import { NavigationContext } from '@components/Route'
+import { ThemeContext } from '@common/Theme/ThemeProvider'
 import {
   Container,
   Image,
@@ -24,6 +25,7 @@ const NavBar = ({ routes = [] }) => {
   const [isActive, setIsActive] = useState(false)
   const { width } = useSize()
   const [isScrolled, setIsScrolled] = useState(false)
+  const [currentTheme, setCurrentTheme] = useContext(ThemeContext)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,6 +85,14 @@ const NavBar = ({ routes = [] }) => {
     }
   }
 
+  const handleColorTheme = () => {
+    if (currentTheme === 'light') {
+      setCurrentTheme('dark')
+    } else {
+      setCurrentTheme('light')
+    }
+  }
+
   const renderDesktopItems = () => {
     if (!routes || !routes.length) return null
     return routes.map((route) => (
@@ -129,7 +139,7 @@ const NavBar = ({ routes = [] }) => {
         </Image>
         <DesktopTitle>Coding the Front End</DesktopTitle>
         <Group>
-          <button className="theme-button">
+          <button className="theme-button" onClick={handleColorTheme}>
             <IconContainer>
               <Icon name="SUN" />
             </IconContainer>

@@ -4,8 +4,7 @@ import { Section } from '@common/Section'
 import { MobileTech } from './MobileTech'
 import { Tech } from './Tech'
 import { media } from '@common/Theme'
-
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const aboutMeInfo = [
   `I’m a front end developer with a passion for creating web applications and bringing ideas to life on the web. I specialize in JavaScript, HTML, CSS, React, and Styled Components, with the goal of building scalable applications that meet the demands of modern users. 
@@ -24,6 +23,7 @@ const MainContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background: ${(props) => props.theme.colors.white};
   .main {
     position: relative;
   }
