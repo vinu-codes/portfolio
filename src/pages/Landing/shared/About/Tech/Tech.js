@@ -129,9 +129,9 @@ const TechItem = styled.li`
   list-style: none;
   margin: 0;
   padding: 0;
-  height: 150px;
-  width: 150px;
-  padding: 16px 16px 8px 16px;
+  height: 154px;
+  width: 154px;
+  padding: 16px 16px 18px 16px;
   background: white;
   display: flex;
   flex-direction: column;
