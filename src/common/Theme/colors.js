@@ -7,7 +7,7 @@ export const grey = 'rgb(215 215 215)'
 export const black = '#000000'
 export const offWhite = '#fff'
 export const darkGrey = 'rgb(101 97 97)'
-export const yellow = 'yellow'
+export const yellow = 'rgb(254 207 77)'
 
 export const colors = {
   lightPurple,
