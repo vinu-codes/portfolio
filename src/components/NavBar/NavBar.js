@@ -141,7 +141,11 @@ const NavBar = ({ routes = [] }) => {
         <Group>
           <button className="theme-button" onClick={handleColorTheme}>
             <IconContainer>
-              <Icon name="SUN" />
+              <Icon
+                name={currentTheme === 'light' ? 'MOON' : 'SUN'}
+                viewBox="0 0 24 24"
+                size={currentTheme === 'light' ? 24 : 20}
+              />
             </IconContainer>
           </button>
           {renderDesktopItems()}
@@ -154,6 +158,15 @@ const NavBar = ({ routes = [] }) => {
           <img alt="profile" src={profile} />
         </MobileImage>
         <MobileTitle>vinu-codes</MobileTitle>
+        <button className="mobile-theme" onClick={handleColorTheme}>
+          <IconContainer>
+            <Icon
+              name={currentTheme === 'light' ? 'MOON' : 'SUN'}
+              viewBox="0 0 24 24"
+              size={currentTheme === 'light' ? 24 : 20}
+            />
+          </IconContainer>
+        </button>
         <MobileButton onClick={toggleMenu}>
           <IconContainer>
             <Icon

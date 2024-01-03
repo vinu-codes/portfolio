@@ -10,7 +10,7 @@ const MobileTechContainer = styled.div`
   width: 100%;
   flex-direction: column;
   h3 {
-    color: rgb(42, 43, 102);
+    color: ${(props) => props.theme.colors.navyBlue};
     font-weight: 600;
     font-size: 27px;
     line-height: 48px;

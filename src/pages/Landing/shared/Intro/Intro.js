@@ -3,7 +3,6 @@ import { Hero } from '@components/Hero'
 import { Main } from '@common/Main'
 import { Icon, IconContainer } from '@common/Icon'
 import { Button } from '@common/Button'
-// import { Solveig } from '@components/Solveig'
 
 const jumpToReleventDiv = (id) => {
   const releventDiv = document.getElementById(id)
@@ -15,12 +14,11 @@ const jumpToReleventDiv = (id) => {
 const Intro = () => {
   return (
     <>
-      {/* <Solveig /> */}
       <Hero id="home">
         <Main
           className="intro"
           subtitle="Front End Developer"
-          title="Hi! 👋 My name is Vinu. Welcome to my portfolio!"
+          title="👋 My name is Vinu. Welcome to my portfolio!"
           config={{ hasTypeWriter: true }}
         >
           <Button mt={32} onClick={() => jumpToReleventDiv('library')}>

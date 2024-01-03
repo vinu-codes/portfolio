@@ -7,7 +7,7 @@ const DesktopTitle = styled.h2`
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  color: #2a2b66;
+  color: ${(props) => props.theme.colors.navyBlue};
   margin-left: 16px;
   display: none;
   ${media.md`
@@ -22,7 +22,7 @@ const MobileTitle = styled.h2`
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  color: ${colors.navyBlue};
+  color: ${(props) => props.theme.colors.navyBlue};
   margin-left: calc(48px + 16px);
   display: block;
 
@@ -43,13 +43,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 16px;
   padding-right: 16px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
-  background: white;
+  background: ${(props) => props.theme.colors.white};
   z-index: 999;
   top: 0;
   left: 0;
@@ -74,6 +73,9 @@ const Container = styled.div`
     min-height: 100vh;
     max-height: 100vh;
     box-shadow: none;
+    button.mobile-theme {
+      display: none;
+    }
     ${media.md`
     height: 72px;
     min-height: 72px;
@@ -81,12 +83,27 @@ const Container = styled.div`
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
   `};
   }
+  button.mobile-theme {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    position: absolute;
+    right: 60px;
+    ${media.md`
+    display: none;
+    `}
+  }
 `
 const MobileMenu = styled.div`
   width: 100%;
   position: relative;
   top: 200px;
-  background: white;
+  background: ${(props) => props.theme.colors.white};
   ${media.md`
     display: none;
   `};
@@ -122,7 +139,7 @@ const MobileItem = styled.li`
   span {
     font-size: 18px;
     font-weight: ${font.regular};
-    color: ${colors.navyBlue};
+    color: ${(props) => props.theme.colors.navyBlue};
   }
   &:hover {
     span {
@@ -157,6 +174,18 @@ const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  svg.ICON.MOON {
+    path {
+      fill: ${(props) => props.theme.colors.yellow};
+      stroke: ${(props) => props.theme.colors.yellow};
+    }
+  }
+  svg.ICON.SUN {
+    path {
+      fill: ${(props) => props.theme.colors.yellow};
+      stroke: ${(props) => props.theme.colors.yellow};
+    }
+  }
 `
 
 const Group = styled.ul`
@@ -224,14 +253,14 @@ const Item = styled.li`
   }
   span {
     font-size: 16px;
-    color: ${colors.navyBlue};
+    color: ${(props) => props.theme.colors.navyBlue};
     font-weight: ${font.thin};
   }
   ${(props) =>
     props.isActive &&
     css`
       span {
-        color: ${colors.lightPurple};
+        color: ${(props) => props.theme.colors.lightPurple};
         font-weight: ${font.bold};
       }
     `};

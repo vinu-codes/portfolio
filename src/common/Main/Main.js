@@ -1,6 +1,5 @@
 import React from 'react'
 import { TypeWriter } from '@components/TypeWriter'
-
 import { MainWrapper, Subtitle, Title, Info } from './Main.styled'
 
 const Main = (props) => {

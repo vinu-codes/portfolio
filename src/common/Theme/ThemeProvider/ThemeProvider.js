@@ -5,10 +5,26 @@ import { colors } from '../colors'
 
 const theme = {
   light: {
-    colors: { white: `${colors.white}` },
+    colors: {
+      white: colors.white,
+      lightPurple: colors.lightPurple,
+      lightGrey: colors.lightGrey,
+      offWhite: colors.offWhite,
+      text: colors.darkGrey,
+      navyBlue: colors.navyBlue,
+      yellow: colors.navyBlue,
+    },
   },
   dark: {
-    colors: { white: `${colors.black}` },
+    colors: {
+      white: colors.navyBlue,
+      lightPurple: colors.white,
+      lightGrey: colors.white,
+      offWhite: 'red',
+      text: colors.white,
+      navyBlue: colors.white,
+      yellow: colors.yellow,
+    },
   },
 }
 

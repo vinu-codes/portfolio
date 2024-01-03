@@ -1,5 +1,4 @@
 import CHECKBOX from './Checkbox'
-
 import CHECKBOX_FILLED from './CheckboxFilled'
 import CHEVRON from './Chevron'
 import SAD from './Sad'

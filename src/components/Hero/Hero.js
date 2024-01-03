@@ -1,8 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useContext } from 'react'
+import styled, { css } from 'styled-components'
 import { media } from '@common/Theme'
-import image from './assets/bg.svg'
+import light from './assets/bg.svg'
+import dark from './assets/bg-dark.svg'
 import { Parallax } from '@components/Parallax'
+import { ThemeContext } from '@common/Theme/ThemeProvider'
 
 const SectionContainer = styled.div`
   background: linear-gradient(
@@ -16,6 +18,19 @@ const SectionContainer = styled.div`
   min-height: 700px;
   max-height: 120rem;
   position: relative;
+  ${(props) =>
+    props.isDark &&
+    css`
+      &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(42, 43, 102, 0.9);
+      }
+    `}
 
   ${media.md`
     height: calc(100vh - 90px);
@@ -29,10 +44,19 @@ const SectionContainer = styled.div`
   }
 `
 
-const Hero = ({ children, ...props }) => (
-  <SectionContainer className="hero" imgSrc={image} {...props}>
-    {children}
-  </SectionContainer>
-)
+const Hero = ({ children, ...props }) => {
+  const [theme, setTheme] = useContext(ThemeContext)
+
+  return (
+    <SectionContainer
+      className="hero"
+      imgSrc={theme === 'light' ? light : dark}
+      isDark={theme === 'dark'}
+      {...props}
+    >
+      {children}
+    </SectionContainer>
+  )
+}
 
 export { Hero }
