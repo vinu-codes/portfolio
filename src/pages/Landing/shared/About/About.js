@@ -7,7 +7,7 @@ import { media } from '@common/Theme'
 import styled, { css } from 'styled-components'
 
 const aboutMeInfo = [
-  `I’m a front end developer with a passion for creating web applications and bringing ideas to life on the web. I specialize in JavaScript, HTML, CSS, React, and Styled Components, with the goal of building scalable applications that meet the demands of modern users. 
+  `I’m a front end developer with a strong passion for building web applications. I specialize in JavaScript, HTML, CSS, React, and Styled Components, with the goal of building scalable applications that meet the demands of todays' users. 
   `,
   `
   I enjoy solving complex problems and thinking outside the box. Web development serves as the perfect playground for me to embrace these challenges while expressing my creativity, turning each project into a unique and fulfilling journey. `,

@@ -66,12 +66,11 @@ const TechContainer = styled.div`
   right: -500px;
   top: 0;
   width: 500px;
-  background: transparent;
+  background: ${(props) => props.theme.colors.offWhite};
   border-left: 3px solid ${colors.lightPurple};
   height: 100%;
   transition: all 0.3s ease-in-out;
   box-shadow: -3px 0px 9px 0px rgba(0, 0, 0, 0.16);
-  background: white;
   display: none;
   ${media.md`
     display: block;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from '@components/Route'
 import resume from './resume.pdf'
 import { DownloadLink, FooterContainer } from './Footer.styled'
@@ -6,15 +6,17 @@ import { Modal } from '@common/Modal'
 import { Button } from '@common/Button'
 import { Icon, IconContainer } from '@common/Icon'
 import { Spacer } from '@common/Spacer'
+import { ThemeContext } from '@common/Theme/ThemeProvider'
 
 const Footer = () => {
   const [showModal, setShowModal] = useState(false)
+  const [theme] = useContext(ThemeContext)
   const handleModal = (arg) => {
     setShowModal(arg)
   }
 
   return (
-    <FooterContainer className="footer">
+    <FooterContainer className="footer" isLight={theme === 'light'}>
       <div className="row">
         <ul>
           <li>

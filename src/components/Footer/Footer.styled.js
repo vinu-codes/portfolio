@@ -1,23 +1,7 @@
 import { colors } from '@common/Theme'
 import styled, { css } from 'styled-components'
 
-const DarkStyle = css`
-  box-shadow: 11px 0px 12px 6px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(
-    45deg,
-    #44484d 1%,
-    #313539 1%,
-    #313539 49%,
-    #44484d 49%,
-    #44484d 51%,
-    #313539 51%,
-    #313539 99%,
-    #44484d 99%
-  );
-  background-size: 16px 16px;
-  background-position: 0 0;
-  background-color: #313539;
-`
+const DarkStyle = css``
 
 const DownloadLink = styled.a`
   text-decoration: none;
@@ -65,7 +49,25 @@ const FooterContainer = styled.div`
       }
     }
   }
-  ${DarkStyle};
+  ${(props) =>
+    props.isLight &&
+    css`
+      box-shadow: 11px 0px 12px 6px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(
+        45deg,
+        #44484d 1%,
+        #313539 1%,
+        #313539 49%,
+        #44484d 49%,
+        #44484d 51%,
+        #313539 51%,
+        #313539 99%,
+        #44484d 99%
+      );
+      background-size: 16px 16px;
+      background-position: 0 0;
+    `};
+  background-color: ${(props) => props.theme.colors.darkGrey};
   padding-bottom: 24px;
   margin-top: 0;
   padding-top: 48px;

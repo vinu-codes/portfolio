@@ -48,7 +48,7 @@ const Container = styled.div`
   padding-left: 16px;
   padding-right: 16px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
-  background: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.theme.colors.offWhite};
   z-index: 999;
   top: 0;
   left: 0;

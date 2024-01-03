@@ -144,7 +144,7 @@ const NavBar = ({ routes = [] }) => {
               <Icon
                 name={currentTheme === 'light' ? 'MOON' : 'SUN'}
                 viewBox="0 0 24 24"
-                size={currentTheme === 'light' ? 24 : 20}
+                size={currentTheme === 'dark' ? 24 : 20}
               />
             </IconContainer>
           </button>
@@ -163,7 +163,7 @@ const NavBar = ({ routes = [] }) => {
             <Icon
               name={currentTheme === 'light' ? 'MOON' : 'SUN'}
               viewBox="0 0 24 24"
-              size={currentTheme === 'light' ? 24 : 20}
+              size={currentTheme === 'dark' ? 24 : 20}
             />
           </IconContainer>
         </button>
