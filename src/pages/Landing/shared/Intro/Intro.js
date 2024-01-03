@@ -20,7 +20,7 @@ const Intro = () => {
         <Main
           className="intro"
           subtitle="Front End Developer"
-          title="Hi! My name is Vinu. Welcome to my portfolio!"
+          title="Hi! 👋 My name is Vinu. Welcome to my portfolio!"
           config={{ hasTypeWriter: true }}
         >
           <Button mt={32} onClick={() => jumpToReleventDiv('library')}>
