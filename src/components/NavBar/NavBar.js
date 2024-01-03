@@ -129,6 +129,11 @@ const NavBar = ({ routes = [] }) => {
         </Image>
         <DesktopTitle>Coding the Front End</DesktopTitle>
         <Group>
+          <button className="theme-button">
+            <IconContainer>
+              <Icon name="SUN" />
+            </IconContainer>
+          </button>
           {renderDesktopItems()}
           <button className="github-button">
             <span onClick={handleGitHub}>GitHub</span>

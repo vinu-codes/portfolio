@@ -169,7 +169,6 @@ const Group = styled.ul`
   align-items: center;
   .github-button {
     border: none;
-
     background: ${colors.lightPurple};
     border: 2px solid transparent;
     border-radius: 16px;
@@ -197,6 +196,11 @@ const Group = styled.ul`
         color: ${colors.lightPurple};
       }
     }
+  }
+  .theme-button {
+    border: none;
+    background: none;
+    cursor: pointer;
   }
   ${media.md`
     display: flex;

@@ -13,6 +13,8 @@ import GITHUB from './Github'
 import ARROW from './Arrow'
 import SEARCH from './Search'
 import DOWNLOAD from './Download'
+import MOON from './Moon'
+import SUN from './Sun'
 
 export {
   SAD,
@@ -29,4 +31,6 @@ export {
   CHEVRON,
   MENU,
   LINKED_IN,
+  MOON,
+  SUN,
 }
