@@ -5,6 +5,42 @@ const AccordionContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  &.active {
+    .header {
+      border-radius: 4px 4px 0 0;
+      border-bottom: none;
+    }
+  }
+  &:not(:first-child) {
+    .header {
+      border-radius: 0 0 4px 4px;
+    }
+  }
+  &:first-child {
+    .header {
+      border-radius: 4px 4px 0 0;
+    }
+  }
+  &:last-child {
+    .header {
+      border-top: none;
+    }
+  }
+  &:last-child {
+    &.active {
+      .header {
+        border-radius: 0 0 0 0;
+      }
+    }
+  }
+  &:not(:first-child) {
+    &:not(:last-child) {
+      .header {
+        border-radius: 0px 0px 0 0;
+        border-top: 0;
+      }
+    }
+  }
 `
 
 const AccordionHeader = styled.div`
@@ -16,12 +52,9 @@ const AccordionHeader = styled.div`
   padding: 16px 0 16px 16px;
   user-select: none;
   display: flex;
+  align-items: center;
   background: ${colors.grey};
   border-radius: 4px;
-  .active & {
-    border-radius: 4px 4px 0 0;
-    border-bottom: 1px solid transparent;
-  }
 `
 
 const AccordionContent = styled.div`
@@ -38,7 +71,6 @@ const AccordionExpander = styled.div`
   max-height: 0;
   height: 0;
   overflow: hidden;
-  transition: all 1s ease-in-out;
   .active & {
     max-height: 800px;
     height: 100%;
