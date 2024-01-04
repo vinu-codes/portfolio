@@ -103,7 +103,7 @@ const MobileMenu = styled.div`
   width: 100%;
   position: relative;
   top: 200px;
-  background: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.theme.colors.offWhite};
   ${media.md`
     display: none;
   `};
