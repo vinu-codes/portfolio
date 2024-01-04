@@ -22,8 +22,8 @@ Here are some of the key skills:
 
 ## Usage
 
-Visit https://v-codes.io/ to explore my portfolio.
+- Visit [https://v-codes.io/](https://v-codes.io/) to explore my portfolio.
 
 ## Contact Information
 
-- LinkedIn: https://www.linkedin.com/in/vinujk/
+- LinkedIn: [https://www.linkedin.com/in/vinujk/](https://www.linkedin.com/in/vinujk/)
