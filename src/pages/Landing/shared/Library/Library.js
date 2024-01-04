@@ -136,23 +136,23 @@ const Library = () => {
       link="https://github.com/vinu-codes/portfolio/blob/main/src/common/Accordion/Accordion.js"
     >
       <AccordionContainer>
-        <Accordion name="accordion" title="Accordion Title">
-          <p>this is inside accordionv2</p>
-          <p>this is inside accordionv2</p>
-          <p>this is inside accordionv2</p>
-          <p>this is inside accordionv2</p>
+        <Accordion name="accordion" title="Accordion Item 1">
+          <p>
+            These are the details of the content. You can find more in-depth
+            information here.
+          </p>
         </Accordion>
-        <Accordion name="accordion1" title="Accordion Title">
-          <p>this is inside accordionv2</p>
-          <p>this is inside accordionv2</p>
-          <p>this is inside accordionv2</p>
-          <p>this is inside accordionv2</p>
+        <Accordion name="accordion1" title="Accordion Item 2">
+          <p>
+            These are the details of the content. You can find more in-depth
+            information here.
+          </p>
         </Accordion>
-        <Accordion name="accordion2" title="Accordion Title">
-          <p>this is inside accordionv2</p>
-          <p>this is inside accordionv2</p>
-          <p>this is inside accordionv2</p>
-          <p>this is inside accordionv2</p>
+        <Accordion name="accordion2" title="Accordion Item 3">
+          <p>
+            These are the details of the content. You can find more in-depth
+            information here.
+          </p>
         </Accordion>
       </AccordionContainer>
     </Detail>

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { colors, mrFn } from '@common/Theme'
+import { colors, mrFn, font } from '@common/Theme'
 
 const AccordionContainer = styled.div`
   width: 100%;
@@ -45,6 +45,7 @@ const AccordionContainer = styled.div`
 
 const AccordionHeader = styled.div`
   width: 100%;
+  cursor: pointer;
   border-top: 1px solid ${colors.lightGrey};
   border-right: 1px solid ${colors.lightGrey};
   border-left: 1px solid ${colors.lightGrey};
@@ -59,6 +60,9 @@ const AccordionHeader = styled.div`
 
 const AccordionContent = styled.div`
   padding: 16px 16px 32px 16px;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: ${font.thin};
   .active & {
     border-right: 1px solid ${colors.lightGrey};
     border-left: 1px solid ${colors.lightGrey};
