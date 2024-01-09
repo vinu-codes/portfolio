@@ -25,6 +25,7 @@ const Dropdown = ({ options, callback, name, ...props }) => {
     return () => {
       document.removeEventListener('keydown', escFunction, false)
     }
+    // eslint-disable-next-line
   }, [escFunction])
 
   useEffect(() => {
@@ -41,6 +42,7 @@ const Dropdown = ({ options, callback, name, ...props }) => {
     return () => {
       body.removeEventListener('click', callback)
     }
+    // eslint-disable-next-line
   }, [])
 
   iRuffu.current = options.map((option, index) =>

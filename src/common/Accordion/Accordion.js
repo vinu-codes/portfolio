@@ -32,7 +32,7 @@ const Accordion = ({ title, name, children }) => {
     if (findMatch) {
       setState(updateArrayByName(state, name))
     } else {
-      setState([...state, { name, value: true }])
+      setState([...state, { name, value: false }])
     }
   }
 

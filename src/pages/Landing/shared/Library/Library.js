@@ -148,12 +148,12 @@ const Library = () => {
             information here.
           </p>
         </Accordion>
-        <Accordion name="accordion2" title="Accordion Item 3">
+        {/* <Accordion name="accordion2" title="Accordion Item 3">
           <p>
             These are the details of the content. You can find more in-depth
             information here.
           </p>
-        </Accordion>
+        </Accordion> */}
       </AccordionContainer>
     </Detail>
   )

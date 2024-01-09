@@ -7,11 +7,12 @@ import { Button } from '@common/Button'
 import { Like } from '@components/Like'
 import { fetchCount, incrementCount, anonymousSignIn } from '@state/auth'
 import { authSelector } from '@state/auth'
+import { Popup } from '@common/Popup'
 import styled from 'styled-components'
 
 const LikeWrapper = styled.div`
   position: absolute;
-  bottom: 32px;
+  bottom: 48px;
   right: 32px;
 `
 
@@ -52,6 +53,7 @@ const Intro = () => {
           </Button>
         </Main>
         <LikeWrapper className="like-wrapper">
+          <Popup message="I like you too" />
           <Like onClick={handleClick} count={count} />
         </LikeWrapper>
       </Hero>

@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `
 
 const Provider = ({ children }) => {
-  const enableStateView = false
+  const enableStateView = true
   const [state, setState] = useState([])
   return (
     <Wrapper className="accordion-wrapper">
