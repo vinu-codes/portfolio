@@ -4,6 +4,9 @@ import { NavigationContext } from '@components/Route'
 import { Intro } from './shared/Intro'
 import { About } from './shared/About'
 import { Library } from './shared/Library'
+import { anonymousSignIn, fetchCount } from '@state/auth'
+import { useDispatch, useSelector } from 'react-redux'
+import { authSelector } from '@state/auth'
 
 const scrollToElement = (id) => {
   const targetElement = document.getElementById(id)
@@ -24,7 +27,9 @@ const scrollToElement = (id) => {
 }
 
 const LandingPage = () => {
+  const dispatch = useDispatch()
   const [currentPath] = useContext(NavigationContext)
+  const isAuthenticated = useSelector(authSelector.isAuthenticated)
 
   useEffect(() => {
     if (currentPath === '/') {
@@ -40,6 +45,16 @@ const LandingPage = () => {
       scrollToElement('library')
     }
   }, [currentPath])
+
+  useEffect(() => {
+    dispatch(anonymousSignIn())
+  }, [])
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      dispatch(fetchCount())
+    }
+  }, [isAuthenticated])
 
   return (
     <Layout>

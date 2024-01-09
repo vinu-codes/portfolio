@@ -8,5 +8,7 @@ module.exports = override(
     ['@components']: path.resolve(__dirname, './src/components'),
     ['@utils']: path.resolve(__dirname, './src/utils'),
     ['@hooks']: path.resolve(__dirname, './src/hooks'),
+    ['@services']: path.resolve(__dirname, './src/services'),
+    ['@state']: path.resolve(__dirname, './src/state'),
   }),
 )

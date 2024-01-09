@@ -1,6 +1,17 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
   "plugins": [
+    "@babel/plugin-proposal-optional-chaining",
     [
       "module-resolver",
       {
@@ -10,7 +21,10 @@
           "@components": "./src/components",
           "@pages": "./src/pages",
           "@hooks": "./src/hooks",
-          "@utils": "./src/utils"
+          "@utils": "./src/utils",
+          "@features": "./src/features",
+          "@state": "./src/state",
+          "@services": "./src/services"
         }
       }
     ]

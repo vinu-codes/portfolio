@@ -14,11 +14,13 @@ import SEARCH from './Search'
 import DOWNLOAD from './Download'
 import MOON from './Moon'
 import SUN from './Sun'
+import THUMB from './Thumb'
 
 export {
   SAD,
   GITHUB,
   RESUME,
+  THUMB,
   CLOSE,
   DOWNLOAD,
   ARROW,
