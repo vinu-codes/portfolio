@@ -1,14 +1,15 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { auth, fireStore } from '@services/firebase'
 import { signInAnonymously } from 'firebase/auth'
-import { doc, getDoc, updateDoc, increment } from 'firebase/firestore'
+import { doc, getDoc, updateDoc, increment, setDoc } from 'firebase/firestore'
 
 const initialState = {
   loading: false,
   error: null,
   count: 0,
-  user: null,
+  uid: null,
   isAuthenticated: false,
+  hasLiked: null,
 }
 
 // returns either the value of count object or null
@@ -32,6 +33,24 @@ const getCount = async () => {
   }
 }
 
+const getUserData = async (uid) => {
+  try {
+    // get the doc reference {userDoc: {hasLiked: false}}
+    const userDocumentRef = doc(fireStore, 'users', uid)
+    const docSnapshot = await getDoc(userDocumentRef)
+
+    if (docSnapshot.exists()) {
+      const data = docSnapshot.data()
+      return data ? data.hasLiked : null
+    } else {
+      return null
+    }
+  } catch (error) {
+    console.log('error getting user data', error)
+    return null
+  }
+}
+
 export const fetchCount = createAsyncThunk(
   'auth/fetchCount',
   async (payload, { rejectWithValue, fulfillWithValue }) => {
@@ -47,13 +66,14 @@ export const fetchCount = createAsyncThunk(
 
 export const incrementCount = createAsyncThunk(
   'auth/incrementCount',
-  async (payload, { rejectWithValue, fulfillWithValue }) => {
+  async (uid, { rejectWithValue, fulfillWithValue, dispatch }) => {
     try {
       const likesDocumentRef = doc(fireStore, 'data', 'likes')
       // increment count property by 1
       await updateDoc(likesDocumentRef, {
         count: increment(1),
       })
+      dispatch(updateUserPreferences(uid))
       const updatedCount = await getCount()
       return fulfillWithValue(updatedCount)
     } catch (error) {
@@ -61,27 +81,77 @@ export const incrementCount = createAsyncThunk(
     }
   },
 )
-
+//
 export const anonymousSignIn = createAsyncThunk(
   'auth/anoymousSignIn',
-  async (payload, { rejectWithValue, fulfillWithValue }) => {
-    const userCredential = await signInAnonymously(auth)
-
+  async (payload, { rejectWithValue, fulfillWithValue, dispatch }) => {
     try {
-      const user = userCredential.user
-      return fulfillWithValue(user)
+      const userCredential = await signInAnonymously(auth)
+      const uid = userCredential.user.uid
+      return fulfillWithValue(uid)
     } catch (error) {
       console.log('error getting user', error)
-      rejectWithValue(error)
+      return rejectWithValue(error)
     }
   },
 )
 
-// This is where I'm at right now
-// user: 'ABC1234282882'
+export const addUserToFiretore = createAsyncThunk(
+  'auth/addUserToFirestore',
+  async (uid, { rejectWithValue, fulfillWithValue }) => {
+    try {
+      const userDocumentRef = doc(fireStore, 'users', uid)
+      const docSnapshot = await getDoc(userDocumentRef)
+      if (docSnapshot.exists()) {
+        console.log('user already exists')
+        return fulfillWithValue()
+      } else {
+        console.log('user does not exist - i will create one')
+        // create a doc under this user in firestore
+        await setDoc(userDocumentRef, {
+          hasLiked: false,
+        })
+        return fulfillWithValue()
+      }
+    } catch (error) {
+      rejectWithValue()
+    }
+  },
+)
 
-//  As soon as a user signs in using the anonymousSignIn action creator, - we will then add to
-//  a document under the collection titled "users" and under the users id ie: 'ABC12334l55' we have a field called: hasLiked: true / false
+export const fetchPreferences = createAsyncThunk(
+  'auth/fetchPreferences',
+  async (uid, { fulfillWithValue, rejectWithValue }) => {
+    try {
+      const preference = await getUserData(uid)
+      return fulfillWithValue(preference)
+    } catch (error) {
+      return rejectWithValue(error)
+    }
+  },
+)
+
+export const updateUserPreferences = createAsyncThunk(
+  'auth/updateUserPreferences',
+  async (uid, { fulfillWithValue, rejectWithValue }) => {
+    try {
+      const userDocumentRef = doc(fireStore, 'users', uid)
+      const docSnapshot = await getDoc(userDocumentRef)
+
+      if (docSnapshot.exists()) {
+        console.log('doc exists for user')
+        await updateDoc(userDocumentRef, {
+          hasLiked: true,
+        })
+        fulfillWithValue(true)
+      } else {
+        console.log('error updating user doc')
+      }
+    } catch (error) {
+      rejectWithValue(error)
+    }
+  },
+)
 
 const authSlice = createSlice({
   name: 'auth',
@@ -97,7 +167,7 @@ const authSlice = createSlice({
     })
     builder.addCase(anonymousSignIn.fulfilled, (state, { payload }) => {
       state.loading = false
-      state.user = payload
+      state.uid = payload
       state.isAuthenticated = true
       state.error = null
     })
@@ -128,6 +198,41 @@ const authSlice = createSlice({
       state.error = null
     })
     builder.addCase(incrementCount.rejected, (state, { payload }) => {
+      state.loading = false
+      state.error = payload
+    })
+    builder.addCase(addUserToFiretore.pending, (state, { payload }) => {
+      state.loading = true
+    })
+    builder.addCase(addUserToFiretore.fulfilled, (state, { payload }) => {
+      state.loading = false
+      state.error = null
+    })
+    builder.addCase(addUserToFiretore.rejected, (state, { payload }) => {
+      state.loading = false
+      state.error = payload
+    })
+    builder.addCase(fetchPreferences.pending, (state, { payload }) => {
+      state.loading = true
+    })
+    builder.addCase(fetchPreferences.fulfilled, (state, { payload }) => {
+      state.loading = false
+      state.hasLiked = payload
+      state.error = null
+    })
+    builder.addCase(fetchPreferences.rejected, (state, { payload }) => {
+      state.loading = false
+      state.error = payload
+    })
+    builder.addCase(updateUserPreferences.pending, (state, { payload }) => {
+      state.loading = true
+    })
+    builder.addCase(updateUserPreferences.fulfilled, (state, { payload }) => {
+      state.loading = false
+      state.hasLiked = payload
+      state.error = null
+    })
+    builder.addCase(updateUserPreferences.rejected, (state, { payload }) => {
       state.loading = false
       state.error = payload
     })

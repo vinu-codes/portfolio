@@ -1,6 +1,7 @@
 import React from 'react'
 import { TechCard } from './TechCard'
 import styled from 'styled-components'
+import { media } from '@common/Theme'
 
 const TechGroup = styled.ul`
   margin: 0;
@@ -15,6 +16,9 @@ const TechGroup = styled.ul`
   padding-left: 20px;
   max-width: 450px;
   padding-right: 20px;
+  ${media.md`
+  flex-wrap: nowrap;
+  max-width: 800px;`};
 `
 
 const technologiesCard = [

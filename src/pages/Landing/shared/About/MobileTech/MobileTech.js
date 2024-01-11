@@ -16,7 +16,7 @@ const MobileTechContainer = styled.div`
     line-height: 48px;
   }
   ${media.md`
-    display: none;
+    display: flex;
   `};
 `
 

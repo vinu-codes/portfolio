@@ -43,7 +43,7 @@ const About = () => (
       config={{ hasTypeWriter: false }}
     />
 
-    <Tech />
+    {/* <Tech /> */}
     <MobileTech />
   </MainContainer>
 )

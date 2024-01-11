@@ -26,9 +26,12 @@ const jumpToReleventDiv = (id) => {
 const Intro = () => {
   const dispatch = useDispatch()
   const count = useSelector(authSelector.count)
+  const hasLiked = useSelector(authSelector.hasLiked)
+  const uid = useSelector(authSelector.uid)
 
   const handleClick = () => {
-    dispatch(incrementCount())
+    if (!!hasLiked) return
+    dispatch(incrementCount(uid))
   }
 
   return (

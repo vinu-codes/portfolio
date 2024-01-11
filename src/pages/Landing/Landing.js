@@ -4,7 +4,12 @@ import { NavigationContext } from '@components/Route'
 import { Intro } from './shared/Intro'
 import { About } from './shared/About'
 import { Library } from './shared/Library'
-import { anonymousSignIn, fetchCount } from '@state/auth'
+import {
+  addUserToFiretore,
+  anonymousSignIn,
+  fetchCount,
+  fetchPreferences,
+} from '@state/auth'
 import { useDispatch, useSelector } from 'react-redux'
 import { authSelector } from '@state/auth'
 
@@ -29,7 +34,7 @@ const scrollToElement = (id) => {
 const LandingPage = () => {
   const dispatch = useDispatch()
   const [currentPath] = useContext(NavigationContext)
-  const isAuthenticated = useSelector(authSelector.isAuthenticated)
+  const uid = useSelector(authSelector.uid)
 
   useEffect(() => {
     if (currentPath === '/') {
@@ -47,14 +52,15 @@ const LandingPage = () => {
   }, [currentPath])
 
   useEffect(() => {
+    dispatch(fetchCount())
     dispatch(anonymousSignIn())
   }, [])
 
   useEffect(() => {
-    if (isAuthenticated) {
-      dispatch(fetchCount())
-    }
-  }, [isAuthenticated])
+    if (!uid || uid === null) return
+    dispatch(addUserToFiretore(uid))
+    dispatch(fetchPreferences(uid))
+  }, [uid])
 
   return (
     <Layout>

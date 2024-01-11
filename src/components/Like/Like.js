@@ -20,7 +20,7 @@ const Like = ({ onClick, count }) => {
   return (
     <LikeContainer className="like-container">
       <LikeButton onClick={handleClick} className={animate ? 'animate' : ''}>
-        <span className="count">{count > 0 ? 0 : '0'}</span>
+        <span className="count">{count > 0 ? count : '0'}</span>
         <span className="plus">+</span>
         <Icon name="THUMB" size={20} stroke="white" />
       </LikeButton>
