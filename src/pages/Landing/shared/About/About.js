@@ -11,7 +11,7 @@ const aboutMeInfo = [
   `,
   `
   I enjoy solving complex problems and thinking outside the box. Web development serves as the perfect playground for me to embrace these challenges while expressing my creativity, turning each project into a unique and fulfilling journey. `,
-  `In my spare time I find joy in hitting the gym for weightlifting sessions, playing the piano and immersing myself in new experiences, particularly in nature.`,
+  `In my spare time I find joy in hitting the gym for weightlifting sessions, playing the piano and immersing myself in new experiences.`,
 ]
 
 const MainContainer = styled.div`
