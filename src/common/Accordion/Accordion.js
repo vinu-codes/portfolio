@@ -47,7 +47,7 @@ const Accordion = ({ title, name, children }) => {
         </IconContainer>
       </AccordionHeader>
       <AccordionExpander>
-        <AccordionContent>{children}</AccordionContent>
+        <AccordionContent className="content">{children}</AccordionContent>
       </AccordionExpander>
     </AccordionContainer>
   )

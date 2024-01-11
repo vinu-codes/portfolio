@@ -11,33 +11,36 @@ const AccordionContainer = styled.div`
       border-bottom: none;
     }
   }
-  &:not(:first-child) {
-    .header {
-      border-radius: 0 0 4px 4px;
-    }
-  }
-  &:first-child {
+  &:first-of-type {
     .header {
       border-radius: 4px 4px 0 0;
     }
   }
-  &:last-child {
+  &:last-of-type {
     .header {
       border-top: none;
+      border-radius: 0 0 4px 4px;
     }
   }
-  &:last-child {
+  &:last-of-type {
     &.active {
       .header {
         border-radius: 0 0 0 0;
       }
     }
   }
-  &:not(:first-child) {
-    &:not(:last-child) {
+  &:not(:first-of-type) {
+    &:not(:last-of-type) {
       .header {
         border-radius: 0px 0px 0 0;
         border-top: 0;
+      }
+    }
+  }
+  &:last-of-type {
+    &.active {
+      .content {
+        border-radius: 0 0 4px 4px;
       }
     }
   }

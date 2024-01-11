@@ -142,7 +142,7 @@ const Library = () => {
       ]}
       link="https://github.com/vinu-codes/portfolio/blob/main/src/common/Accordion/Accordion.js"
     >
-      <AccordionContainer>
+      <AccordionContainer config={{ enableStateView: true }}>
         <Accordion name="accordion-abc" title="Accordion Item 1">
           <p>
             These are the details of the content. You can find more in-depth

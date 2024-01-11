@@ -8,15 +8,24 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
+const MainWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`
 
-const Provider = ({ children }) => {
-  const enableStateView = true
+const Provider = ({ children, config }) => {
+  const enableStateView = config ? config.enableStateView : false
   const [state, setState] = useState([])
   return (
-    <Wrapper className="accordion-wrapper">
-      <Context.Provider value={[state, setState]}>{children}</Context.Provider>
+    <MainWrapper>
+      <Wrapper className="accordion-wrapper">
+        <Context.Provider value={[state, setState]}>
+          {children}
+        </Context.Provider>
+      </Wrapper>
       {enableStateView && <StateView state={{ state }} />}
-    </Wrapper>
+    </MainWrapper>
   )
 }
 
