@@ -82,6 +82,9 @@ const LikeButton = styled.button`
       animation: ${borderAnimation} cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
       animation-fill-mode: forwards;
     }
+    svg {
+      transform: scale(1.1);
+    }
   }
   span {
     padding: 0;
@@ -99,6 +102,11 @@ const LikeButton = styled.button`
   }
   svg {
     margin-left: 8px;
+  }
+  &:hover {
+    svg {
+      transform: scale(1.1);
+    }
   }
 `
 
