@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { font, media } from '@common/Theme'
 
 const slideIn = keyframes`
@@ -23,6 +23,7 @@ const DottedBox = styled.div`
   justify-content: center;
   border-radius: 8px;
   align-items: flex-start;
+  overflow-y: auto;
 `
 
 const DetailContainer = styled.div`
@@ -57,6 +58,15 @@ const Panel = styled.div`
     margin: 0px 0px 8px;
     font-weight: 700;
   }
+  h3.detail-subtitle {
+    border-top: 1px solid rgb(239, 239, 239);
+    padding-top: 16px;
+    font-size: 16px;
+    color: rgb(42, 43, 102);
+    margin: 0px 0px 8px;
+    font-weight: 700;
+  }
+
   ul.detail-group {
     margin: 0;
     padding: 0;

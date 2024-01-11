@@ -8,6 +8,7 @@ const Detail = ({ items, title, link, children }) => {
     if (!items || !items.length) return null
     const result = items.map((item, index) => (
       <li className="detail-item" key={index}>
+        {item.title && <h3 className="detail-subtitle">{item.title}</h3>}
         <span>{item.label}</span>
       </li>
     ))

@@ -125,35 +125,42 @@ const Library = () => {
       title="Accordion"
       items={[
         {
+          title: '',
           label:
             'This accordion component provides an intuitive and space-efficient interface whilst elevating the developers experience through its reusable, customizable, and well-documented design. Its adoption can significantly expedite the development of interactive and collapsible sections within React applications.',
         },
         {
+          title: '',
           label:
             'Developers can integrate the accordion effortlessly into their projects by importing the component and configuring it through props. The simplicity of the API contributes to a smooth onboarding process for new developers.',
+        },
+        {
+          title: 'Developer Notes',
+          label:
+            'When a user selects any of these accordion headers, the component will pick up the name passed to the specified accordion you clicked. It will then use this name as an identifier on the provider state. This allows for better developer experience when adding additional Accordion items. This moves away from relying on an array format, instead they can simply pass children to the Accordion Provider and fill in the name property.',
         },
       ]}
       link="https://github.com/vinu-codes/portfolio/blob/main/src/common/Accordion/Accordion.js"
     >
       <AccordionContainer>
-        <Accordion name="accordion" title="Accordion Item 1">
+        <Accordion name="accordion-abc" title="Accordion Item 1">
           <p>
             These are the details of the content. You can find more in-depth
             information here.
           </p>
         </Accordion>
-        <Accordion name="accordion1" title="Accordion Item 2">
+        <Accordion name="accordion-efg" title="Accordion Item 2">
           <p>
             These are the details of the content. You can find more in-depth
             information here.
           </p>
         </Accordion>
-        {/* <Accordion name="accordion2" title="Accordion Item 3">
+        <Accordion name="accordion-hij" title="Accordion Item 3">
           <p>
             These are the details of the content. You can find more in-depth
             information here.
           </p>
-        </Accordion> */}
+        </Accordion>
       </AccordionContainer>
     </Detail>
   )
