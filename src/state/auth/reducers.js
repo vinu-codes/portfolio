@@ -143,12 +143,12 @@ export const updateUserPreferences = createAsyncThunk(
         await updateDoc(userDocumentRef, {
           hasLiked: true,
         })
-        fulfillWithValue(true)
+        return fulfillWithValue(true)
       } else {
         console.log('error updating user doc')
       }
     } catch (error) {
-      rejectWithValue(error)
+      return rejectWithValue(error)
     }
   },
 )
